@@ -1,11 +1,9 @@
 import './App.css'
 
-function App() {
+export default function App() {
   return (
-    <>
-      <p>init</p>
-    </>
+    <h1 className="text-3xl font-bold">
+      Hello world!
+    </h1>
   )
 }
-
-export default App
