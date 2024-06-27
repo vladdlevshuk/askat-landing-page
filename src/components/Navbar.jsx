@@ -1,10 +1,9 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // import logo from '../assets/logo.png';
 import { Link } from 'react-scroll';
 
 // react icons
-import { FaXmark, FaBars } from 'react-icons/fa6';
+import { FaXmark, FaBars, FaSquareWhatsapp, FaTelegram } from 'react-icons/fa6';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -73,16 +72,27 @@ const Navbar = () => {
                         ))}
                     </ul>
 
-                    {/* btn items for large devices */}
-                    <div className='space-x-12 hidden lg:flex items-center'>
-                        {/* <a href="" className='hidden lg:flex items-center text-brandPrimary hover:text-gray900'>Login</a> */}
+                    {/* icons and button for large devices */}
+                    <div className='space-x-4 hidden lg:flex items-center'>
+                        <a href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer">
+                            <FaSquareWhatsapp className='text-neutralDGrey h-6 w-6 hover:text-brandPrimary' />
+                        </a>
+                        <a href="https://t.me/yourusername" target="_blank" rel="noopener noreferrer">
+                            <FaTelegram className='text-neutralDGrey h-6 w-6 hover:text-brandPrimary' />
+                        </a>
                         <button className='bg-brandPrimary text-white py-2 px-4 transition-all duration-300 rounded hover:bg-neutralDGrey cursor-pointer'>
                             Запросить предложение
                         </button>
                     </div>
 
                     {/* menu btn for only mobile devices */}
-                    <div className='md:hidden'>
+                    <div className='flex items-center md:hidden'>
+                        <a href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer">
+                            <FaSquareWhatsapp className='text-neutralDGrey h-6 w-6 mr-2' />
+                        </a>
+                        <a href="https://t.me/yourusername" target="_blank" rel="noopener noreferrer">
+                            <FaTelegram className='text-neutralDGrey h-6 w-6 mr-2' />
+                        </a>
                         <button
                             onClick={toggleMenu}
                             className='text-neutralDGrey focus:outline-none focus:text-gray-500 cursor-pointer'
