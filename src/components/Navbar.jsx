@@ -106,6 +106,9 @@ const Navbar = () => {
                             {link}
                         </Link>
                     ))}
+                    <button className='block text-base text-white cursor-pointer first:font-medium'>
+                        Запросить предложение
+                    </button>
                 </div>
             </nav>
         </header>
