@@ -48,8 +48,9 @@ const Navbar = () => {
     ];
 
     return (
-        <header className='w-full bg-white md:bg-transparent fixed top-0 left-0 right-0'>
-            <nav className={`py-5 lg:px-14 px-5 ${isSticky ? "sticky top-0 left-0 right-0 border-b bg-white duration-300" : ""}`}>
+        <header className='w-full mx-auto bg-white md:bg-transparent fixed top-0 left-0 right-0' style={{maxWidth: '1540px'}}>
+            <nav className={`lg:px-14 px-5 ${isSticky ? "sticky top-0 left-0 right-0 border-b bg-white duration-300" : ""}`}
+            style={{paddingTop: '18px', paddingBottom: '18px'}}>
                 <div className='flex justify-between items-center text-base gap-8'>
                     <a href="" className='text-4xl font-semibold flex items-center'>
                         <img src={logo} alt="Logo" className='w-9 inline-block items-center' />
@@ -65,7 +66,8 @@ const Navbar = () => {
                                 smooth={true}
                                 offset={-100}
                                 key={path}
-                                className='block text-lg text-gray900 hover:text-brandPrimary cursor-pointer first:font-medium'
+                                className='block text-lg text-gray900 lg:hover:text-brandPrimary lg:hover:scale-110 cursor-pointer
+                                transition-all duration-300 first:font-medium'
                             >
                                 {link}
                             </Link>
@@ -76,13 +78,13 @@ const Navbar = () => {
                     <div className='hidden lg:flex items-center gap-4'>
                         <div className='hidden lg:flex justify-between align-center gap-4'>
                             <a href="https://t.me/yourusername" target="_blank" rel="noopener noreferrer">
-                                <FaTelegram className='text-neutralDGrey h-6 w-6 hover:text-brandPrimary' />
+                                <FaTelegram className='text-neutralDGrey h-6 w-6 lg:hover:text-brandPrimary transition-all duration-300' />
                             </a>
                             <a href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer">
-                                <FaWhatsapp  className='text-neutralDGrey h-6 w-6 hover:text-brandPrimary' />
+                                <FaWhatsapp  className='text-neutralDGrey h-6 w-6 lg:hover:text-brandPrimary transition-all duration-300' />
                             </a>
                         </div>
-                        <button className='bg-brandPrimary text-lg text-white py-2 px-4 transition-all duration-300 rounded hover:bg-neutralDGrey cursor-pointer'>
+                        <button className='bg-brandPrimary text-lg text-white py-2 px-4 transition-all duration-300 rounded lg:hover:bg-neutralDGrey cursor-pointer'>
                             Заказать
                         </button>
                     </div>

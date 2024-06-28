@@ -3,3 +3,11 @@
 body {
     font-family: "Inter", sans-serif;
 }
+
+header {
+    z-index: 10 !important;
+}
+
+.btn-primary {
+    @apply px-7 py-2 bg-brandPrimary xl:text-xl md:text-lg text-white rounded lg:hover:bg-neutralDGrey duration-300 lg:hover:-translate-y-1;
+}
