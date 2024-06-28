@@ -48,7 +48,7 @@ const Navbar = () => {
     ];
 
     return (
-        <header className='w-full mx-auto bg-white md:bg-transparent fixed top-0 left-0 right-0' style={{maxWidth: '1540px'}}>
+        <header className='w-full mx-auto bg-white md:bg-transparent fixed top-0 left-0 right-0' style={{maxWidth: '1440px'}}>
             <nav className={`lg:px-14 px-5 ${isSticky ? "sticky top-0 left-0 right-0 border-b bg-white duration-300" : ""}`}
             style={{paddingTop: '18px', paddingBottom: '18px'}}>
                 <div className='flex justify-between items-center text-base gap-8'>
@@ -66,7 +66,7 @@ const Navbar = () => {
                                 smooth={true}
                                 offset={-100}
                                 key={path}
-                                className='block text-lg text-gray900 lg:hover:text-brandPrimary lg:hover:scale-110 cursor-pointer
+                                className='block text-lg xl:text-xl md:text-lg text-gray900 lg:hover:text-brandPrimary lg:hover:scale-105 cursor-pointer
                                 transition-all duration-300 first:font-medium'
                             >
                                 {link}
