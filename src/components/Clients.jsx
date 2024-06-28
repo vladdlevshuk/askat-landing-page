@@ -9,7 +9,6 @@ import company7 from '../assets/company/company7.png'
 import company8 from '../assets/company/company8.png'
 import company9 from '../assets/company/company9.png'
 
-// Массив с импортированными картинками, их классами и атрибутами alt
 const companyLogos = [
   { src: company1, width: 'w-32', alt: 'RetailCRM Logo', link: 'https://www.retailcrm.ru/' },
   { src: company2, width: 'w-20', alt: 'Мой склад Logo', link: 'https://www.moysklad.ru/by/' },
@@ -22,7 +21,7 @@ const companyLogos = [
   { src: company9, width: 'w-24', alt: 'Abcp Logo', link: 'https://www.abcp.ru/' },
 ];
 
-const Services = () => {
+const Clients = () => {
   return (
     <div className='md:px-14 px-4 py-16 max-w-screen2xl mx-auto' style={{ maxWidth: '1440px' }}>
       <div className='text-center my-8'>
@@ -42,4 +41,4 @@ const Services = () => {
   );
 }
 
-export default Services;
+export default Clients;
