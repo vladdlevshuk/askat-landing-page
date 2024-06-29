@@ -43,7 +43,7 @@ const Services = () => {
   return (
     <div className='md:px-14 px-4 py-16 max-w-screen2xl mx-auto' style={{ maxWidth: '1440px' }}>
       <motion.div
-      variants={fadeIn("right", 0.1)}
+      variants={fadeIn("up", 0.2)}
       initial='hidden'
       whileInView={'show'}
       viewport={{once: false, amount: 0.4}}
@@ -63,7 +63,7 @@ const Services = () => {
       </motion.div>
       {/* services card */}
       <motion.div
-          variants={fadeIn("left", 0.1)}
+          variants={fadeIn("up", 0.2)}
           initial='hidden'
           whileInView={'show'}
           viewport={{once: false, amount: 0.4}}
@@ -80,7 +80,7 @@ const Services = () => {
 
       {/* cards */}
       <motion.div
-      variants={fadeIn("right", 0.1)}
+      variants={fadeIn("up", 0.2)}
       initial='hidden'
       whileInView={'show'}
       viewport={{once: false, amount: 0.4}}
