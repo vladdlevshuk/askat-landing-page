@@ -53,7 +53,7 @@ const Navbar = () => {
             style={{paddingTop: '18px', paddingBottom: '18px'}}>
                 <div className='flex justify-between items-center text-base gap-8'>
                     <a href="" className='text-4xl font-semibold flex items-center'>
-                        <img src={logo} alt="Logo" className='w-9 inline-block items-center' />
+                        <img src={logo} alt="Logo" className='w-10 inline-block items-center' />
                         <span className='text-[#263238] ml-0'>ASKAT</span>
                     </a>
 
@@ -107,7 +107,7 @@ const Navbar = () => {
                 </div>
 
                 {/* nav items for mobile devices */}
-                <div className={`flex flex-wrap justify-center gap-8 px-4 mt-16 py-7 bg-brandPrimary ${isMenuOpen ? "block fixed top-0 right-0 left-0" : "hidden"}`}>
+                <div className={`flex flex-wrap justify-center gap-8 px-4 mt-16 py-7 bg-brandPrimary ${isMenuOpen ? "block fixed top-3 right-0 left-0" : "hidden"}`}>
                     {navItems.map(({ link, path }) => (
                         <Link
                             to={path}
