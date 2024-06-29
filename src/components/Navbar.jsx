@@ -107,7 +107,7 @@ const Navbar = () => {
                 </div>
 
                 {/* nav items for mobile devices */}
-                <div className={`space-y-4 px-4 mt-16 py-7 bg-brandPrimary ${isMenuOpen ? "block fixed top-0 right-0 left-0" : "hidden"}`}>
+                <div className={`flex flex-wrap justify-center gap-8 px-4 mt-16 py-7 bg-brandPrimary ${isMenuOpen ? "block fixed top-0 right-0 left-0" : "hidden"}`}>
                     {navItems.map(({ link, path }) => (
                         <Link
                             to={path}
@@ -115,12 +115,12 @@ const Navbar = () => {
                             smooth={true}
                             offset={-100}
                             key={path}
-                            className='block text-base text-white cursor-pointer first:font-medium'
+                            className='block text-lg text-white cursor-pointer first:font-medium'
                         >
                             {link}
                         </Link>
                     ))}
-                    <button className='block text-base text-white cursor-pointer first:font-medium'>
+                    <button className='block text-lg text-white cursor-pointer first:font-medium'>
                         Заказать
                     </button>
                 </div>

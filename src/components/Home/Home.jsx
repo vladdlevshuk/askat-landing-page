@@ -1,6 +1,7 @@
 import React from 'react';
-import banner1 from '../assets/banner.png';
-import '../App.css';
+import banner1 from '../../assets/banner.png';
+import '../../App.css';
+import './Home.css'
 
 const Home = () => {
   return (
