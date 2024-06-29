@@ -6,8 +6,8 @@ import './Home.css'
 const Home = () => {
   return (
     <div className='bg-neutralSilver mx-auto'>
-        <div className='lg:px-14 px-5 max-w-screen-2xl mx-auto' style={{height: '92vh', maxWidth: '1440px'}}>
-            <div className="my-20  py-20 md:28 flex flex-col lg:flex-row-reverse items-center justify-between gap-12">
+        <div className='lg:px-14 px-5 max-w-screen-2xl mx-auto' style={{height: '100vh', maxWidth: '1440px'}}>
+            <div className="my-20  py-12 md:28 flex flex-col lg:flex-row-reverse items-center justify-between gap-12">
                 <div className='hidden lg:block w-full md:w-auto justify-center'>
                     <img src={banner1} alt="Banner" className='w-full md:w-auto' style={{maxWidth: '500px'}}/>
                 </div>
