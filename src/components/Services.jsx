@@ -12,7 +12,7 @@ import service1 from '../assets/services/audit.png';
 import service2 from '../assets/services/integration.png';
 import service3 from '../assets/services/connection.png';
 import service4 from '../assets/services/marketing.png';
-import service5 from '../assets/services/members.png';
+import service5 from '../assets/services/support.png';
 import service6 from '../assets/services/development.png';
 
 import { motion } from 'framer-motion';
@@ -89,16 +89,12 @@ const Services = () => {
       <div className='mt-14 lg:px-24 grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-8 lg:gap-20'>
         {services.map(service => (
           <motion.div
-            key={service.id}
-            variants={fadeIn("", 0.2)}
-            initial='hidden'
-            whileInView={'show'}
-            viewport={{ once: true, amount: 0.4 }}
+
             className='px-4 py-8 text-center md:w-[300px] mx-auto lg:h-80 rounded-md shadow cursor-pointer lg:hover:-translate-y-2 lg:hover:border-b-4 lg:hover:border-brandPrimary transition-all duration-300 flex items-center justify-center h-full'
           >
-            <div className='lg:hover:-translate-y-2 transition-all duration-300 flex flex-col items-start h-full'>
-              <div className='bg-[#cde6ff] h-14 w-14 mx-auto rounded-tl-3xl rounded-br-3xl'>
-                <img src={service.image} alt="Service Icon" className='-ml-5' />
+            <div className='lg:hover:-translate-y-1 transition-all duration-300 flex flex-col items-start h-full'>
+              <div className='bg-[#cde6ff] h-12 w-12 mx-auto rounded-tl-3xl rounded-br-3xl'>
+                <img src={service.image} alt="Service Icon" className='-ml-4 w-10'/>
               </div>
               <h4 className='text-2xl mx-auto font-bold text-neutralDGrey mb-2 px-2'>{service.title}</h4>
               <p className='text-sm text-neutralGrey'>{service.description}</p>
