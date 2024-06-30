@@ -17,6 +17,7 @@ import service6 from '../assets/services/development.png';
 
 import { motion } from 'framer-motion';
 import { fadeIn } from '../variants';
+import {useMediaQuery, useMediaQueries} from '@react-hook/media-query'
 
 const companyLogos = [
   { src: company1, width: 'w-32', alt: 'RetailCRM Logo', link: 'https://www.retailcrm.ru/' },
@@ -40,6 +41,8 @@ const services = [
 ];
 
 const Services = () => {
+  const isMobile = useMediaQuery('(max-width: 768px)');
+
   return (
     <div className='md:px-14 px-4 py-16 max-w-screen2xl mx-auto' style={{ maxWidth: '1440px' }}>
       <div>
@@ -69,39 +72,60 @@ const Services = () => {
         </motion.div>
       </div>
 
-      <motion.div
-        variants={fadeIn("", 0.2)}
-        initial='hidden'
-        whileInView={'show'}
-        viewport={{ once: true, amount: 0.4 }}
-      >
-        <div className='text-center my-8'>
+      <div>
+        <motion.div
+          variants={fadeIn("", 0.2)}
+          initial='hidden'
+          whileInView={'show'}
+          viewport={{ once: true, amount: 0.4 }}
+          className='text-center my-8'
+        >
           <h2 className='text-4xl md:text-5xl text-neutralDGrey font-semibold mb-4'>
             Услуги
           </h2>
           <p className='mx-auto text-neutralGrey text-xl' style={{ maxWidth: '1000px' }}>
             В рамках нашей работы с CRM системой RetailCRM мы предлагаем разнообразные услуги, способствующие росту вашего бизнеса в онлайне. В числе наших услуг:
           </p>
-        </div>
-      </motion.div>
-
-      {/* cards */}
-      <div className='mt-14 lg:px-24 grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-8 lg:gap-20'>
-        {services.map(service => (
-          <motion.div
-
-            className='px-4 py-8 text-center md:w-[300px] mx-auto lg:h-80 rounded-md shadow cursor-pointer lg:hover:-translate-y-2 lg:hover:border-b-4 lg:hover:border-brandPrimary transition-all duration-300 flex items-center justify-center h-full'
-          >
-            <div className='lg:hover:-translate-y-1 transition-all duration-300 flex flex-col items-start h-full'>
-              <div className='bg-[#cde6ff] h-12 w-12 mx-auto rounded-tl-3xl rounded-br-3xl'>
-                <img src={service.image} alt="Service Icon" className='-ml-4 w-10'/>
-              </div>
-              <h4 className='text-2xl mx-auto font-bold text-neutralDGrey mb-2 px-2'>{service.title}</h4>
-              <p className='text-sm text-neutralGrey'>{service.description}</p>
-            </div>
-          </motion.div>
-        ))}
+        </motion.div>
       </div>
+
+      {isMobile ? (
+        <div className='mt-14 lg:px-24 grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-8 lg:gap-20'>
+          {services.map(service => (
+            <div key={service.id} className='px-4 py-8 text-center md:w-[300px] mx-auto lg:h-80 rounded-md shadow-md cursor-pointer lg:hover:-translate-y-2
+            lg:hover:border-b-4 lg:hover:border-brandPrimary transition-all duration-300 flex items-center justify-center h-full'>
+              <div className='lg:hover:-translate-y-1 transition-all duration-300 flex flex-col items-start h-full'>
+                <div className='bg-[#cde6ff] h-12 w-12 mx-auto rounded-tl-3xl rounded-br-3xl'>
+                  <img src={service.image} alt="Service Icon" className='-ml-4 w-10'/>
+                </div>
+                <h4 className='text-2xl mx-auto font-bold text-neutralDGrey mb-2 px-2'>{service.title}</h4>
+                <p className='text-sm text-neutralGrey'>{service.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <motion.div
+          variants={fadeIn("", 0.2)}
+          initial='hidden'
+          whileInView={'show'}
+          viewport={{ once: true, amount: 0.4 }}
+          className='mt-14 lg:px-24 grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-8 lg:gap-20'
+        >
+          {services.map(service => (
+            <div key={service.id} className='px-4 py-8 text-center md:w-[300px] mx-auto lg:h-80 rounded-md shadow-md cursor-pointer lg:hover:-translate-y-2
+            lg:hover:border-b-4 lg:hover:border-brandPrimary transition-all duration-300 flex items-center justify-center h-full'>
+              <div className='lg:hover:-translate-y-1 transition-all duration-300 flex flex-col items-start h-full'>
+                <div className='bg-[#cde6ff] h-12 w-12 mx-auto rounded-tl-3xl rounded-br-3xl'>
+                  <img src={service.image} alt="Service Icon" className='-ml-4 w-10'/>
+                </div>
+                <h4 className='text-2xl mx-auto font-bold text-neutralDGrey mb-2 px-2'>{service.title}</h4>
+                <p className='text-sm text-neutralGrey'>{service.description}</p>
+              </div>
+            </div>
+          ))}
+        </motion.div>
+      )}
     </div>
   );
 };
