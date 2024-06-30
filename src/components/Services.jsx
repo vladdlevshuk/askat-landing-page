@@ -8,12 +8,12 @@ import company6 from '../assets/company/company6.png';
 import company7 from '../assets/company/company7.png';
 import company8 from '../assets/company/company8.png';
 import company9 from '../assets/company/company9.png';
-import service1 from '../assets/services/members.png';
-import service2 from '../assets/services/hands.png';
-import service3 from '../assets/services/group.png';
-import service4 from '../assets/services/group.png';
-import service5 from '../assets/services/hands.png';
-import service6 from '../assets/services/members.png';
+import service1 from '../assets/services/audit.png';
+import service2 from '../assets/services/integration.png';
+import service3 from '../assets/services/connection.png';
+import service4 from '../assets/services/marketing.png';
+import service5 from '../assets/services/members.png';
+import service6 from '../assets/services/development.png';
 
 import { motion } from 'framer-motion';
 import { fadeIn } from '../variants';
@@ -85,7 +85,8 @@ const Services = () => {
         </div>
       </motion.div>
 
-      <div className='my-14 lg:px-24 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 lg:gap-20'>
+      {/* cards */}
+      <div className='mt-14 lg:px-24 grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-8 lg:gap-20'>
         {services.map(service => (
           <motion.div
             key={service.id}
@@ -93,7 +94,7 @@ const Services = () => {
             initial='hidden'
             whileInView={'show'}
             viewport={{ once: true, amount: 0.4 }}
-            className='px-4 py-8 text-center md:w-[300px] mx-auto md:h-80 rounded-md shadow cursor-pointer lg:hover:-translate-y-2 lg:hover:border-b-4 lg:hover:border-brandPrimary transition-all duration-300 flex items-center justify-center h-full'
+            className='px-4 py-8 text-center md:w-[300px] mx-auto lg:h-80 rounded-md shadow cursor-pointer lg:hover:-translate-y-2 lg:hover:border-b-4 lg:hover:border-brandPrimary transition-all duration-300 flex items-center justify-center h-full'
           >
             <div className='lg:hover:-translate-y-2 transition-all duration-300 flex flex-col items-start h-full'>
               <div className='bg-[#cde6ff] h-14 w-14 mx-auto rounded-tl-3xl rounded-br-3xl'>
