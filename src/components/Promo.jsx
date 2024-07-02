@@ -4,7 +4,7 @@ import aboutImg from '../assets/about.png'
 import { motion } from 'framer-motion';
 import { fadeIn } from '../variants';
 
-const About = () => {
+const Promo = () => {
   return (
     <motion.div
       id='about'
@@ -12,9 +12,9 @@ const About = () => {
       initial='hidden'
       whileInView={'show'}
       viewport={{ once: true, amount: 0.4 }}
-      className='bg-neutralSilver'
+      className='bg-neutralSilver mb-20'
     >
-      <div className='p-4 lg:px-14 max-w-screen-2xl mx-auto lg:my-8'>
+      <div className='p-4 lg:px-14 max-w-screen-2xl mx-auto'>
         <div className='md:w-10/12 mx-auto flex flex-col md:flex-row justify-between items-center gap-12'>
           <div className='hidden lg:block' style={{maxWidth: '500px'}}>
             <img src={aboutImg} alt="About Image"/>
@@ -31,4 +31,4 @@ const About = () => {
   )
 }
 
-export default About
+export default Promo

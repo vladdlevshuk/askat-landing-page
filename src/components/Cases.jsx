@@ -13,7 +13,7 @@ const Cases = () => {
     {id: 3, title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', image: thirdProject},
   ];
   return (
-    <div className='px-4 py-16 lg:px-14 max-w-screen 2xl mx-auto' style={{maxWidth: '1440px'}} id='cases'>
+    <div className='px-4 pb-20 lg:px-14 max-w-screen 2xl mx-auto' style={{maxWidth: '1440px'}} id='cases'>
         <motion.div
           variants={fadeIn("", 0.2)}
           initial='hidden'

@@ -44,7 +44,7 @@ const Services = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
 
   return (
-    <div className='md:px-14 px-4 py-16 max-w-screen2xl mx-auto' style={{ maxWidth: '1440px' }}>
+    <div className='md:px-14 px-4 py-20 max-w-screen2xl mx-auto' style={{ maxWidth: '1440px' }}>
       <div>
         <motion.div
           variants={fadeIn("", 0.2)}
@@ -62,7 +62,7 @@ const Services = () => {
           initial='hidden'
           whileInView={'show'}
           viewport={{ once: true, amount: 0.4 }}
-          className='lg:my-20 mx-auto flex flex-wrap justify-center gap-8 md:gap-12'
+          className='lg:mt-8 mx-auto flex flex-wrap justify-center gap-8 md:gap-12'
         >
           {companyLogos.map((logo, index) => (
             <a key={index} href={logo.link} target="_blank" rel="noopener noreferrer" className="transform transition-transform duration-300 lg:hover:scale-110">
@@ -79,7 +79,7 @@ const Services = () => {
           initial='hidden'
           whileInView={'show'}
           viewport={{ once: true, amount: 0.4 }}
-          className='text-center my-8'
+          className='text-center mt-16 mb-8'
         >
           <h2 className='text-4xl md:text-5xl text-neutralDGrey font-semibold mb-4'>
             Услуги
@@ -90,7 +90,7 @@ const Services = () => {
         </motion.div>
       </div>
 
-{/*       {isMobile ? (
+      {isMobile ? (
         <div className='mt-14 lg:px-24 grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-8 lg:gap-20'>
           {services.map(service => (
             <div key={service.id} className='px-4 py-8 text-center md:w-[300px] mx-auto lg:h-80 rounded-md shadow-md cursor-pointer lg:hover:-translate-y-2
@@ -105,7 +105,7 @@ const Services = () => {
             </div>
           ))}
         </div>
-      ) : ( */}
+      ) : (
         <div className='mt-14 lg:px-24 grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-8 lg:gap-20'>
           {services.map(service => (
             <motion.div
@@ -127,7 +127,7 @@ const Services = () => {
             </motion.div>
           ))}
         </div>
-
+      )}
     </div>
   );
 };

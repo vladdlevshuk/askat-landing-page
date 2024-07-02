@@ -70,7 +70,7 @@ const Navbar = () => {
                 key={path}
                 className='block text-lg xl:text-xl md:text-lg text-gray900 lg:hover:text-brandPrimary lg:hover:scale-105 cursor-pointer
                 transition-all duration-300 first:font-medium'
-                onClick={closeMenu} // Close menu when clicking on a menu item
+                onClick={closeMenu}
               >
                 {link}
               </Link>
@@ -119,7 +119,7 @@ const Navbar = () => {
               offset={-100}
               key={path}
               className='block text-lg text-white cursor-pointer first:font-medium'
-              onClick={closeMenu} // Close menu when clicking on a menu item
+              onClick={closeMenu}
             >
               {link}
             </Link>
