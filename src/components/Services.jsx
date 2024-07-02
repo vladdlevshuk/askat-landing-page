@@ -90,7 +90,7 @@ const Services = () => {
         </motion.div>
       </div>
 
-      {isMobile ? (
+{/*       {isMobile ? (
         <div className='mt-14 lg:px-24 grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-8 lg:gap-20'>
           {services.map(service => (
             <div key={service.id} className='px-4 py-8 text-center md:w-[300px] mx-auto lg:h-80 rounded-md shadow-md cursor-pointer lg:hover:-translate-y-2
@@ -105,17 +105,18 @@ const Services = () => {
             </div>
           ))}
         </div>
-      ) : (
-        <motion.div
-          variants={fadeIn("", 0.2)}
-          initial='hidden'
-          whileInView={'show'}
-          viewport={{ once: true, amount: 0.4 }}
-          className='mt-14 lg:px-24 grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-8 lg:gap-20'
-        >
+      ) : ( */}
+        <div className='mt-14 lg:px-24 grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-8 lg:gap-20'>
           {services.map(service => (
-            <div key={service.id} className='px-4 py-7 text-center md:w-[300px] mx-auto lg:h-72 rounded-md shadow-md cursor-pointer lg:hover:-translate-y-2
-            lg:hover:border-b-4 lg:hover:border-brandPrimary transition-all duration-300 flex items-center justify-center h-full'>
+            <motion.div
+              variants={fadeIn("", 0.2)}
+              initial='hidden'
+              whileInView={'show'}
+              viewport={{ once: true, amount: 0.4 }}
+              key={service.id}
+              className='px-4 py-7 text-center md:w-[300px] mx-auto lg:h-72 rounded-md shadow-md cursor-pointer lg:hover:-translate-y-2
+              lg:hover:border-b-4 lg:hover:border-brandPrimary transition-all duration-300 flex items-center justify-center h-full'
+            >
               <div className='lg:hover:-translate-y-1 transition-all duration-300 flex flex-col items-start h-full'>
                 <div className='bg-[#cde6ff] h-12 w-12 mx-auto rounded-tl-3xl rounded-br-3xl'>
                   <img src={service.image} alt="Service Icon" className='-ml-4 w-10'/>
@@ -123,10 +124,10 @@ const Services = () => {
                 <h4 className='text-2xl mx-auto font-bold text-neutralDGrey mb-2 px-2'>{service.title}</h4>
                 <p className='text-sm text-neutralGrey'>{service.description}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </motion.div>
-      )}
+        </div>
+
     </div>
   );
 };

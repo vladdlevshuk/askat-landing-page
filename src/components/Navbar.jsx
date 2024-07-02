@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import logo from '../assets/logo.png';
 import { Link } from 'react-scroll';
-
-// react icons
 import { FaXmark, FaBars, FaWhatsapp, FaTelegram } from 'react-icons/fa6';
 
 const Navbar = () => {
@@ -12,6 +10,11 @@ const Navbar = () => {
   // set toggle menu
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  // close menu when clicking on a menu item
+  const closeMenu = () => {
+    setIsMenuOpen(false);
   };
 
   useEffect(() => {
@@ -51,7 +54,7 @@ const Navbar = () => {
         style={{paddingTop: '18px', paddingBottom: '18px'}}
       >
         <div className='flex justify-between items-center text-base gap-8'>
-          <a href="" className='text-4xl font-semibold flex items-center'>
+          <a href="/" className='text-4xl font-semibold flex items-center' onClick={() => setIsMenuOpen(false)}>
             <img src={logo} alt="Logo" className='w-10 inline-block items-center' />
             <span className='text-[#263238] ml-0'>ASKAT</span>
           </a>
@@ -67,6 +70,7 @@ const Navbar = () => {
                 key={path}
                 className='block text-lg xl:text-xl md:text-lg text-gray900 lg:hover:text-brandPrimary lg:hover:scale-105 cursor-pointer
                 transition-all duration-300 first:font-medium'
+                onClick={closeMenu} // Close menu when clicking on a menu item
               >
                 {link}
               </Link>
@@ -115,11 +119,12 @@ const Navbar = () => {
               offset={-100}
               key={path}
               className='block text-lg text-white cursor-pointer first:font-medium'
+              onClick={closeMenu} // Close menu when clicking on a menu item
             >
               {link}
             </Link>
           ))}
-          <button className='block text-lg text-white cursor-pointer first:font-medium'>
+          <button className='block text-lg text-white cursor-pointer first:font-medium' onClick={closeMenu}>
             Заказать
           </button>
         </div>
