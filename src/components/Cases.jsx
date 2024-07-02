@@ -15,7 +15,7 @@ const Cases = () => {
   return (
     <div className='px-4 pb-20 lg:px-14 max-w-screen 2xl mx-auto' style={{maxWidth: '1440px'}} id='cases'>
         <motion.div
-          variants={fadeIn("", 0.2)}
+          variants={fadeIn("", 0.1)}
           initial='hidden'
           whileInView={'show'}
           viewport={{ once: true, amount: 0.4 }}
@@ -28,7 +28,7 @@ const Cases = () => {
         <div className='grid xl:grid-cols-3 grid-cols-1 gap-8 xl:gap-16 items-center justify-between'>
           {
             projects.map(project => <motion.div
-                variants={fadeIn("", 0.2)}
+                variants={fadeIn("", 0.1)}
                 initial='hidden'
                 whileInView={'show'}
                 viewport={{ once: true, amount: 0.4 }}

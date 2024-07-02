@@ -5,7 +5,7 @@ import { fadeIn } from '../variants';
 const Newsletter = () => {
   return (
     <motion.div
-      variants={fadeIn("", 0.2)}
+      variants={fadeIn("", 0.1)}
       initial='hidden'
       whileInView={'show'}
       viewport={{ once: true, amount: 0.4 }}

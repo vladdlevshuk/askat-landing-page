@@ -45,7 +45,8 @@ const Navbar = () => {
   const navItems = [
     { link: "О нас", path: "home" },
     { link: "Услуги", path: "services" },
-    { link: "Кейсы", path: "cases" }
+    { link: "Кейсы", path: "cases" },
+    { link: "Контакты", path: "footer" }
   ];
 
   return (

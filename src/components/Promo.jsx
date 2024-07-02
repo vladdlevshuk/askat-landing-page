@@ -8,7 +8,7 @@ const Promo = () => {
   return (
     <motion.div
       id='about'
-      variants={fadeIn("", 0.2)}
+      variants={fadeIn("", 0.1)}
       initial='hidden'
       whileInView={'show'}
       viewport={{ once: true, amount: 0.4 }}

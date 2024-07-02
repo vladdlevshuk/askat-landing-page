@@ -5,6 +5,7 @@ import Services from './components/Services.jsx'
 import Promo from './components/Promo.jsx'
 import Cases from './components/Cases.jsx'
 import Newsletter from './components/Newsletter.jsx'
+import Footer from './components/Footer.jsx'
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
       <Promo />
       <Cases />
       <Newsletter />
+      <Footer />
     </>
   )
 }

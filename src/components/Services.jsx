@@ -47,7 +47,7 @@ const Services = () => {
     <div className='md:px-14 px-4 py-20 max-w-screen2xl mx-auto' style={{ maxWidth: '1440px' }}>
       <div>
         <motion.div
-          variants={fadeIn("", 0.2)}
+          variants={fadeIn("", 0.1)}
           initial='hidden'
           whileInView={'show'}
           viewport={{ once: true, amount: 0.4 }}
@@ -58,7 +58,7 @@ const Services = () => {
         </motion.div>
 
         <motion.div
-          variants={fadeIn("", 0.2)}
+          variants={fadeIn("", 0.1)}
           initial='hidden'
           whileInView={'show'}
           viewport={{ once: true, amount: 0.4 }}
@@ -75,7 +75,7 @@ const Services = () => {
       <div>
         <motion.div
           id='services'
-          variants={fadeIn("", 0.2)}
+          variants={fadeIn("", 0.1)}
           initial='hidden'
           whileInView={'show'}
           viewport={{ once: true, amount: 0.4 }}
@@ -109,7 +109,7 @@ const Services = () => {
         <div className='mt-14 lg:px-24 grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-8 lg:gap-20'>
           {services.map(service => (
             <motion.div
-              variants={fadeIn("", 0.2)}
+              variants={fadeIn("", 0.1)}
               initial='hidden'
               whileInView={'show'}
               viewport={{ once: true, amount: 0.4 }}
