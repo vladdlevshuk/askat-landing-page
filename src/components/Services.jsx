@@ -26,9 +26,9 @@ const companyLogos = [
   { src: company4, width: 'w-16', alt: 'Passteam Logo', link: 'https://www.passteam.ru/' },
   { src: company5, width: 'w-36', alt: 'Tilypad Logo', link: 'https://tillypad.ru/' },
   { src: company6, width: 'w-20', alt: 'Iiko Logo', link: 'https://iiko.ru/' },
-  { src: company7, width: 'w-28', alt: 'OsmiCards Logo', link: 'https://osmicards.com/' },
+  { src: company7, width: 'w-24', alt: 'Abcp Logo', link: 'https://www.abcp.ru/'},
   { src: company8, width: 'w-20', alt: 'Zzap Logo', link: 'https://www.zzap.ru/' },
-  { src: company9, width: 'w-24', alt: 'Abcp Logo', link: 'https://www.abcp.ru/' },
+  { src: company9, width: 'w-28', alt: 'OsmiCards Logo', link: 'https://osmicards.com/' },
 ];
 
 const services = [
@@ -51,7 +51,7 @@ const Services = () => {
           initial='hidden'
           whileInView={'show'}
           viewport={{ once: true, amount: 0.4 }}
-          className='text-center my-8'
+          className='text-center mb-8'
         >
           <h2 className='text-4xl md:text-5xl text-neutralDGrey font-semibold mb-4'>Наши партнеры</h2>
           <p className='text-neutralGrey text-xl'>Уже интегрировали RetailCRM c:</p>
@@ -74,6 +74,7 @@ const Services = () => {
 
       <div>
         <motion.div
+          id='services'
           variants={fadeIn("", 0.2)}
           initial='hidden'
           whileInView={'show'}
@@ -113,7 +114,7 @@ const Services = () => {
           className='mt-14 lg:px-24 grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-8 lg:gap-20'
         >
           {services.map(service => (
-            <div key={service.id} className='px-4 py-8 text-center md:w-[300px] mx-auto lg:h-80 rounded-md shadow-md cursor-pointer lg:hover:-translate-y-2
+            <div key={service.id} className='px-4 py-7 text-center md:w-[300px] mx-auto lg:h-72 rounded-md shadow-md cursor-pointer lg:hover:-translate-y-2
             lg:hover:border-b-4 lg:hover:border-brandPrimary transition-all duration-300 flex items-center justify-center h-full'>
               <div className='lg:hover:-translate-y-1 transition-all duration-300 flex flex-col items-start h-full'>
                 <div className='bg-[#cde6ff] h-12 w-12 mx-auto rounded-tl-3xl rounded-br-3xl'>

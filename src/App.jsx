@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Home from './components/Home/Home.jsx'
 import Services from './components/Services.jsx'
 import About from './components/About.jsx'
+import Cases from './components/Cases.jsx'
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
       <Home />
       <Services />
       <About />
+      <Cases />
     </>
   )
 }

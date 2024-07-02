@@ -7,6 +7,7 @@ import { fadeIn } from '../variants';
 const About = () => {
   return (
     <motion.div
+      id='about'
       variants={fadeIn("", 0.2)}
       initial='hidden'
       whileInView={'show'}
