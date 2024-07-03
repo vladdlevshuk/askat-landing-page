@@ -38,7 +38,7 @@ const Cases = () => {
               <div className='text-center px-4 py-8 bg-white shadow-lg rounded-md md:w-3/4 mx-auto absolute left-0 right-0 -bottom-12'>
                 <h3 className='mb-3 text-neutralGrey font-semibold'>{project.title}</h3>
                 <div className='flex items-center justify-center gap-8'>
-                  <a href="/" className='font-bold text-brandPrimary lg:hover:scale-95 transition-all duration-200'>
+                  <a href="/" className='font-bold text-brandPrimary'>
                     Подробнее
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

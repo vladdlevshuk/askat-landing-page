@@ -16,7 +16,7 @@ const MyFooter = () => {
         viewport={{ once: true, amount: 0.4 }}
         className="bg-[#263238] lg:p-6 p-4 rounded-none w-full"
       >
-        <div className="grid mx-auto w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1" style={{maxWidth: '1440px'}}>
+        <div className="grid mx-auto w-full justify-between sm:gap-16 gap-6 sm:flex sm:justify-between md:flex md:grid-cols-1" style={{maxWidth: '1440px'}}>
           <div>
             <a href="/" className='text-4xl font-semibold flex items-center'>
               <img src={logo} alt="Logo" className='w-10 inline-block items-center' />
@@ -24,8 +24,8 @@ const MyFooter = () => {
             </a>
             <div className='flex flex-col gap-1 text-white mt-8 font-normal'>
               <p>© 2024 Askat</p>
-              <p className='mb-10'>Все права защищены</p>
-              <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-left mb-10">
+              <p className='mb-4 sm:mb-6 lg:mb-10'>Все права защищены</p>
+              <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-left">
                 <a href="https://t.me/yourusername" target="_blank" rel="noopener noreferrer">
                   <FaTelegram className='text-white h-6 w-6 lg:hover:text-brandPrimary transition-all duration-300' />
                 </a>
