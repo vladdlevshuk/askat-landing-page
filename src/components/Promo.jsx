@@ -1,10 +1,16 @@
-import React from 'react'
-import aboutImg from '../assets/about.png'
-
+import React, { useState } from 'react';
+import aboutImg from '../assets/about.png';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../variants';
+import Modal from './RequestModal/RequestModal.jsx'; // Подключаем модальное окно
 
 const Promo = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false); // Состояние для открытия/закрытия модального окна
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
   return (
     <motion.div
       id='about'
@@ -23,12 +29,15 @@ const Promo = () => {
             <h2 className='mx-auto text-center lg:mx-0 lg:text-left text-3xl md:text-5xl text-neutralDGrey font-semibold mb-4 md:w-4/5'>Давайте превратим идею в реальность</h2>
             <p className='mx-auto text-center lg:mx-0 lg:text-left md:w-3/4 text-xl text-neutralGrey mb-8'>Свяжитесь с нами сегодня, чтобы узнать больше о том, как наши услуги
             могут помочь вашему бизнесу расти и преуспевать в Интернете</p>
-            <button className='mx-auto lg:mx-0 btn-primary max-w-sm lg:max-w-md'>Получить бесплатное предложение</button>
+            <button onClick={openModal} className='mx-auto lg:mx-0 btn-primary max-w-sm lg:max-w-md'>Получить бесплатное предложение</button>
           </div>
         </div>
       </div>
-    </motion.div>
-  )
-}
 
-export default Promo
+      {/* Модальное окно */}
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    </motion.div>
+  );
+};
+
+export default Promo;

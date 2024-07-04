@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import banner1 from '../../assets/banner.png';
 import '../../App.css';
 import './Home.css';
+import Modal from '../RequestModal/RequestModal.jsx';
 
 const Home = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className='bg-neutralSilver mx-auto' id='home'>
       <div className='lg:px-14 px-5 max-w-screen-2xl mx-auto container' style={{height: '92vh', maxWidth: '1440px'}}>
@@ -24,11 +35,12 @@ const Home = () => {
               продаж и маркетинга для eCommerce, Ритейла и HoReCa
             </p>
             <div className='flex lg:justify-start justify-center'>
-              <button className='btn-primary'>Записаться на консультацию</button>
+              <button className='btn-primary' onClick={openModal}>Записаться на консультацию</button>
             </div>
           </div>
         </div>
       </div>
+      {isModalOpen && <Modal isOpen={isModalOpen} onClose={closeModal} />}
     </div>
   );
 }
