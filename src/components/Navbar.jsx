@@ -22,6 +22,7 @@ const Navbar = () => {
   // open and close modal
   const openModal = () => {
     setIsModalOpen(true);
+    closeMenu();
   };
 
   const closeModal = () => {
@@ -135,7 +136,7 @@ const Navbar = () => {
                 offset={-100}
                 key={path}
                 className='block text-lg text-white cursor-pointer first:font-medium'
-                onClick={closeMenu}
+                onClick={() => { closeMenu(); }}
               >
                 {link}
               </Link>
