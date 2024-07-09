@@ -13,7 +13,7 @@ const MyFooter = () => {
         variants={fadeIn("", 0.1)}
         initial='hidden'
         whileInView={'show'}
-        viewport={{ once: true, amount: 0.4 }}
+        viewport={{ once: true, amount: 0.3 }}
         className="bg-[#263238] lg:p-6 p-4 rounded-none w-full"
       >
         <div className="grid mx-auto w-full justify-between sm:gap-16 gap-6 sm:flex sm:justify-between md:flex md:grid-cols-1" style={{maxWidth: '1440px'}}>

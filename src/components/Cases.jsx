@@ -13,7 +13,7 @@ const Cases = () => {
     {id: 3, title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', image: thirdProject},
   ];
   return (
-    <div className='px-4 pb-20 lg:px-14 max-w-screen 2xl mx-auto' style={{maxWidth: '1440px'}} id='cases'>
+    <div className='px-4 py-16 md:py-20 lg:px-14 max-w-screen 2xl mx-auto' style={{maxWidth: '1440px'}} id='cases'>
         <motion.div
           variants={fadeIn("", 0.1)}
           initial='hidden'
@@ -32,31 +32,14 @@ const Cases = () => {
                 initial='hidden'
                 whileInView={'show'}
                 viewport={{ once: true, amount: 0.4 }}
-                key={project.id} className='mx-auto relative mb-12 cursor-pointer'
+                key={project.id} className='mx-auto relative mb-12'
               >
-              <img src={project.image} alt="Project Image" className='lg:hover:scale-95 transition-all duration-300 xl:max-w-96'/>
+              <img src={project.image} alt="Project Image" className='lg:hover:scale-95 cursor-pointer transition-all duration-300 xl:max-w-96'/>
               <div className='text-center px-4 py-8 bg-white shadow-lg rounded-md md:w-3/4 mx-auto absolute left-0 right-0 -bottom-12'>
                 <h3 className='mb-3 text-neutralGrey font-semibold'>{project.title}</h3>
                 <div className='flex items-center justify-center gap-8'>
-                  <a href="/" className='font-bold text-brandPrimary'>
+                  <a href="/" className='font-bold text-brandPrimary lg:hover:scale-105 lg:hover:text-neutralGrey transition-all duration-300'>
                     Подробнее
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="17"
-                      height="11"
-                      viewBox="0 0 17 11"
-                      fill="none"
-                      className="inline-block ml-2"
-                      style={{ stroke: '#2196F3', strokeWidth: 2 }}
-                    >
-                      <path
-                        d="M1 5.5H16M16 5.5L11.5 1M16 5.5L11.5 10"
-                        stroke="#2196F3"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
                   </a>
                 </div>
               </div>

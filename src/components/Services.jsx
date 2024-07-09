@@ -44,7 +44,7 @@ const Services = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
 
   return (
-    <div className='md:px-14 px-4 py-20 max-w-screen2xl mx-auto' style={{ maxWidth: '1440px' }}>
+    <div className='md:px-14 px-4 py-16 md:py-20 max-w-screen2xl mx-auto' style={{ maxWidth: '1440px' }}>
       <div>
         <motion.div
           variants={fadeIn("", 0.1)}
@@ -91,7 +91,13 @@ const Services = () => {
       </div>
 
       {isMobile ? (
-        <div className='mt-14 lg:px-24 grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-8 lg:gap-20'>
+        <motion.div
+          variants={fadeIn("", 0.1)}
+          initial='hidden'
+          whileInView={'show'}
+          viewport={{ once: true, amount: 0.15 }}
+          className='mt-14 lg:px-24 grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-8 lg:gap-20'
+        >
           {services.map(service => (
             <div key={service.id} className='px-4 py-8 text-center md:w-[300px] mx-auto lg:h-80 rounded-md shadow-md cursor-pointer lg:hover:-translate-y-2
             lg:hover:border-b-4 lg:hover:border-brandPrimary transition-all duration-300 flex items-center justify-center h-full'>
@@ -104,9 +110,9 @@ const Services = () => {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
       ) : (
-        <div className='mt-14 lg:px-24 grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-8 lg:gap-20'>
+        <div className='mt-14 lg:px-24 grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-8 lg:gap-12 mx-auto' style={{maxWidth: '1250px'}}>
           {services.map(service => (
             <motion.div
               variants={fadeIn("", 0.1)}
@@ -114,7 +120,7 @@ const Services = () => {
               whileInView={'show'}
               viewport={{ once: true, amount: 0.4 }}
               key={service.id}
-              className='px-4 py-7 text-center md:w-[300px] mx-auto lg:h-72 rounded-md shadow-md cursor-pointer lg:hover:-translate-y-2
+              className='px-4 py-7 text-center md:w-[310px] mx-auto lg:h-72 rounded-md shadow-md cursor-pointer lg:hover:-translate-y-2
               lg:hover:border-b-4 lg:hover:border-brandPrimary transition-all duration-300 flex items-center justify-center h-full'
             >
               <div className='lg:hover:-translate-y-1 transition-all duration-300 flex flex-col items-start h-full'>

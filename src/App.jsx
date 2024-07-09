@@ -6,6 +6,8 @@ import Promo from './components/Promo.jsx'
 import Cases from './components/Cases.jsx'
 import Newsletter from './components/Newsletter.jsx'
 import Footer from './components/Footer.jsx'
+import HowWeWork from './components/HowWeWork.jsx'
+import Technologies from './components/Technologies.jsx'
 
 export default function App() {
   return (
@@ -15,6 +17,8 @@ export default function App() {
       <Services />
       <Promo />
       <Cases />
+      <HowWeWork />
+      <Technologies />
       <Newsletter />
       <Footer />
     </>

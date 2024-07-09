@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import aboutImg from '../assets/about.png';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../variants';
-import Modal from './RequestModal/RequestModal.jsx'; // Подключаем модальное окно
+import Modal from './RequestModal/RequestModal.jsx';
 
 const Promo = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false); // Состояние для открытия/закрытия модального окна
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -18,9 +18,9 @@ const Promo = () => {
       initial='hidden'
       whileInView={'show'}
       viewport={{ once: true, amount: 0.4 }}
-      className='bg-neutralSilver mb-20'
+      className='bg-neutralSilver'
     >
-      <div className='px-4 lg:px-14 py-8 lg:py-12 max-w-screen-2xl mx-auto'>
+      <div className='px-4 lg:px-14 py-16 md:py-20 max-w-screen-2xl mx-auto'>
         <div className='md:w-10/12 mx-auto flex flex-col md:flex-row justify-between items-center gap-12'>
           <div className='hidden lg:block' style={{maxWidth: '500px'}}>
             <img src={aboutImg} alt="About Image"/>
