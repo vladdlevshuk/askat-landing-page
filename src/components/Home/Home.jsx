@@ -3,6 +3,7 @@ import banner1 from '../../assets/banner.png';
 import '../../App.css';
 import './Home.css';
 import Modal from '../RequestModal/RequestModal.jsx';
+import { FaChevronDown } from 'react-icons/fa';
 
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -38,6 +39,10 @@ const Home = () => {
               <button className='btn-primary' onClick={openModal}>Записаться на консультацию</button>
             </div>
           </div>
+        </div>
+        {/* down arrow */}
+        <div className="flex justify-center">
+          <FaChevronDown className="text-neutralGrey text-3xl animate-bounce" />
         </div>
       </div>
       {isModalOpen && <Modal isOpen={isModalOpen} onClose={closeModal} />}
