@@ -148,8 +148,8 @@ const RequestModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50">
-      <div ref={modalRef} className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md mx-5">
+    <div className="fixed inset-0 bg-gray-600 bg-opacity-70 flex items-center justify-center z-50">
+      <div ref={modalRef} className="bg-white p-8 rounded-3xl shadow-lg w-full max-w-md mx-5">
         <div className="text-center">
           <h2 className="text-3xl text-neutralDGrey font-semibold mb-2">Оставить заявку</h2>
           <p className='text-neutralGrey text-sm mb-4'>Заполните форму ниже и мы свяжемся с вами, чтобы обсудить ваш бизнес-запрос</p>
@@ -159,7 +159,7 @@ const RequestModal = ({ isOpen, onClose }) => {
             placeholder="Ваше имя"
             value={formData.name}
             onChange={handleChange}
-            className={`w-full p-2 mb-1 border border-gray-300 rounded custom-input`}
+            className={`w-full h-12 p-4 mb-1 border border-gray-300 rounded-3xl custom-input`}
           />
           {errors.name && !isSubmitting && (
             <p className="text-left text-red-500 text-sm">{errors.name}</p>
@@ -171,7 +171,7 @@ const RequestModal = ({ isOpen, onClose }) => {
             value={formData.phone}
             onChange={handlePhoneChange}
             regions={'ex-ussr'}
-            inputClass={`w-full p-2 border border-gray-300 rounded pl-0`}
+            inputClass={`w-full h-12 p-4 border border-gray-300 rounded-3xl pl-0`}
             containerClass="flex gap-8 mt-4"
             dropdownClass="text-left"
           />
@@ -184,20 +184,20 @@ const RequestModal = ({ isOpen, onClose }) => {
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
-            className={`w-full p-2 mt-4 mb-1 border border-gray-300 rounded custom-input`}
+            className={`w-full h-12 p-4 mt-4 mb-1 border border-gray-300 rounded-3xl custom-input`}
           />
           {errors.email && !isSubmitting && (
             <p className="text-left text-red-500 text-sm">{errors.email}</p>
           )}
           <button
             onClick={handleSubmit}
-            className="bg-brandPrimary mt-4 text-white py-2 px-4 transition-all duration-300 rounded lg:hover:bg-neutralDGrey w-full"
+            className="bg-brandPrimary mt-4 text-white py-2 px-4 transition-all duration-300 rounded-3xl lg:hover:bg-neutralDGrey w-full"
           >
             Подтвердить
           </button>
           <button
             onClick={onClose}
-            className="mt-4 text-gray-500 transition-all duration-300 rounded lg:hover:text-brandPrimary"
+            className="mt-4 text-gray-500 transition-all duration-300 rounded-3xl lg:hover:text-brandPrimary"
           >
             Закрыть
           </button>

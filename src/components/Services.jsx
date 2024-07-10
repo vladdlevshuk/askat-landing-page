@@ -99,7 +99,7 @@ const Services = () => {
           className='mt-14 lg:px-24 grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-8 lg:gap-20'
         >
           {services.map(service => (
-            <div key={service.id} className='px-4 py-8 text-center md:w-[300px] mx-auto lg:h-80 rounded-md shadow-md cursor-pointer lg:hover:-translate-y-2
+            <div key={service.id} className='px-4 py-8 text-center md:w-[300px] mx-auto lg:h-80 rounded-3xl shadow-md cursor-pointer lg:hover:-translate-y-2
             lg:hover:border-b-4 lg:hover:border-brandPrimary transition-all duration-300 flex items-center justify-center h-full'>
               <div className='lg:hover:-translate-y-1 transition-all duration-300 flex flex-col items-start h-full'>
                 <div className='bg-[#cde6ff] h-12 w-12 mx-auto rounded-tl-3xl rounded-br-3xl'>
@@ -120,7 +120,7 @@ const Services = () => {
               whileInView={'show'}
               viewport={{ once: true, amount: 0.4 }}
               key={service.id}
-              className='px-4 py-7 text-center md:w-[310px] mx-auto lg:h-72 rounded-md shadow-md cursor-pointer lg:hover:-translate-y-2
+              className='px-4 py-7 text-center md:w-[310px] mx-auto lg:h-72 rounded-3xl shadow-md cursor-pointer lg:hover:-translate-y-2
               lg:hover:border-b-4 lg:hover:border-brandPrimary transition-all duration-300 flex items-center justify-center h-full'
             >
               <div className='lg:hover:-translate-y-1 transition-all duration-300 flex flex-col items-start h-full'>

@@ -58,18 +58,18 @@ const Navbar = () => {
     { link: "О нас", path: "home" },
     { link: "Услуги", path: "services" },
     { link: "Кейсы", path: "cases" },
-    { link: "Контакты", path: "footer" }
+    { link: "Контакты", path: "contacts" }
   ];
 
   return (
     <>
-      <header className='w-full mx-auto bg-white md:bg-transparent fixed top-0 left-0 right-0' style={{maxWidth: '1440px'}}>
+      <header className='w-full mx-auto bg-white md:bg-transparent fixed top-0 left-0 right-0'>
         <nav className={`lg:px-14 px-5 ${isSticky ? "sticky top-0 left-0 right-0 border-b bg-white duration-300" : ""}`}
           style={{paddingTop: '18px', paddingBottom: '18px'}}
         >
-          <div className='flex justify-between items-center text-base gap-8'>
-            <a href="/" className='text-4xl font-semibold flex items-center' onClick={() => setIsMenuOpen(false)}>
-              <img src={logo} alt="Logo" className='w-10 inline-block items-center' />
+          <div className='flex justify-between mx-auto items-center text-base gap-8' style={{maxWidth: '1440px'}}>
+            <a href="/" className='text-3xl font-semibold flex items-center' onClick={() => setIsMenuOpen(false)}>
+              <img src={logo} alt="Logo" className='w-8 inline-block items-center' />
               <span className='text-[#263238] ml-0'>ASKAT</span>
             </a>
 
@@ -82,7 +82,7 @@ const Navbar = () => {
                   smooth={true}
                   offset={-100}
                   key={path}
-                  className='block text-lg xl:text-xl md:text-lg text-gray900 lg:hover:text-brandPrimary lg:hover:scale-105 cursor-pointer
+                  className='block text-lg text-gray900 lg:hover:text-brandPrimary lg:hover:scale-105 cursor-pointer
                   transition-all duration-300 first:font-medium'
                   onClick={closeMenu}
                 >
@@ -102,7 +102,7 @@ const Navbar = () => {
                 </a>
               </div>
               <button
-                className='bg-brandPrimary text-lg text-white py-2 px-4 transition-all duration-300 rounded lg:hover:bg-neutralDGrey cursor-pointer'
+                className='bg-brandPrimary text-lg text-white py-2 px-4 transition-all duration-300 lg:hover:bg-neutralDGrey cursor-pointer rounded-3xl'
                 onClick={openModal}
               >
                 Заказать
@@ -127,7 +127,7 @@ const Navbar = () => {
           </div>
 
           {/* nav items for mobile devices */}
-          <div className={`flex flex-wrap justify-center gap-8 px-4 mt-16 py-7 bg-brandPrimary ${isMenuOpen ? "block fixed top-3 right-0 left-0" : "hidden"}`}>
+          <div className={`flex flex-col gap-8 px-4 mt-16 py-7 bg-brandPrimary ${isMenuOpen ? "block fixed top-2 right-0 left-0" : "hidden"}`}>
             {navItems.map(({ link, path }) => (
               <Link
                 to={path}
@@ -141,7 +141,7 @@ const Navbar = () => {
                 {link}
               </Link>
             ))}
-            <button className='block text-lg text-white cursor-pointer first:font-medium' onClick={openModal}>
+            <button className='block text-lg text-white cursor-pointer first:font-medium text-left' onClick={openModal}>
               Заказать
             </button>
           </div>

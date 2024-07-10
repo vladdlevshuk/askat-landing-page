@@ -36,10 +36,14 @@ const steps = [
 ];
 
 const HowWeWork = () => {
-  const [activeStep, setActiveStep] = useState(1);
+  const [activeSteps, setActiveSteps] = useState([]);
 
   const toggleStep = (id) => {
-    setActiveStep(activeStep === id ? null : id);
+    setActiveSteps(prevState =>
+      prevState.includes(id)
+        ? prevState.filter(stepId => stepId !== id)
+        : [...prevState, id]
+    );
   };
 
   return (
@@ -64,29 +68,29 @@ const HowWeWork = () => {
           {steps.map(step => (
             <div
               key={step.id}
-              className={`shadow-sm rounded-lg ${activeStep === step.id ? 'bg-brandPrimary' : 'bg-white'}`}
+              className={`shadow-sm rounded-3xl ${activeSteps.includes(step.id) ? 'bg-brandPrimary' : 'bg-white'}`}
               onMouseUp={() => toggleStep(step.id)}
             >
               <div className='flex justify-between items-center p-4 cursor-pointer'>
                 <div className='flex items-center'>
-                  <span className={`text-xl md:text-2xl lg:text-3xl mr-4 ${activeStep === step.id ? 'text-white' : 'text-brandPrimary'}`}>
+                  <span className={`text-xl md:text-2xl lg:text-3xl mr-4 ${activeSteps.includes(step.id) ? 'text-white' : 'text-brandPrimary'}`}>
                     {step.id < 10 ? `0${step.id}` : step.id}
                   </span>
-                  <h3 className={`text-xl font-semibold ${activeStep === step.id ? 'text-white' : 'text-neutralDGrey'}`}>
+                  <h3 className={`text-xl font-semibold ${activeSteps.includes(step.id) ? 'text-white' : 'text-neutralDGrey'}`}>
                     {step.title}
                   </h3>
                 </div>
-                <span className={`text-2xl md:text-3xl lg:text-4xl ${activeStep === step.id ? 'text-white' : 'text-brandPrimary'}`}>
-                  {activeStep === step.id ? '-' : '+'}
+                <span className={`text-2xl md:text-3xl lg:text-4xl ${activeSteps.includes(step.id) ? 'text-white' : 'text-brandPrimary'}`}>
+                  {activeSteps.includes(step.id) ? '-' : '+'}
                 </span>
               </div>
               <motion.div
                 initial={{ height: 0, opacity: 0 }}
-                animate={{ height: activeStep === step.id ? 'auto' : 0, opacity: activeStep === step.id ? 1 : 0 }}
-                transition={{ duration: 0.5 }}
+                animate={{ height: activeSteps.includes(step.id) ? 'auto' : 0, opacity: activeSteps.includes(step.id) ? 1 : 0 }}
+                transition={{ duration: 0.1 }}
                 className='overflow-hidden'
               >
-                <div className='p-4 bg-white text-neutralGrey rounded-b-md'>
+                <div className='p-4 bg-white text-neutralGrey' style={{borderBottomRightRadius: '23px', borderBottomLeftRadius: '23px'}}>
                   <p className='text-sm md:text-md lg:text-lg'>{step.description}</p>
                 </div>
               </motion.div>

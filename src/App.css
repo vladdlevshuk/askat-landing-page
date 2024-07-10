@@ -9,5 +9,5 @@ header {
 }
 
 .btn-primary {
-    @apply px-7 py-2 bg-brandPrimary xl:text-xl md:text-lg text-white rounded lg:hover:bg-neutralDGrey duration-300 lg:hover:-translate-y-1;
+    @apply px-7 py-2 bg-brandPrimary xl:text-xl md:text-lg text-white rounded-3xl lg:hover:bg-neutralDGrey duration-300 lg:hover:-translate-y-1;
 }

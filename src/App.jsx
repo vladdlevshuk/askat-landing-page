@@ -8,6 +8,7 @@ import Newsletter from './components/Newsletter.jsx'
 import Footer from './components/Footer.jsx'
 import HowWeWork from './components/HowWeWork.jsx'
 import Technologies from './components/Technologies.jsx'
+import ContactForm from './components/ContactForm/ContactForm.jsx'
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
       <HowWeWork />
       <Technologies />
       <Newsletter />
+      <ContactForm />
       <Footer />
     </>
   )

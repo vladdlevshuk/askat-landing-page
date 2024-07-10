@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../variants';
+import Modal from './RequestModal/RequestModal.jsx'; // Adjust the path based on your project structure
 
 const Newsletter = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <motion.div
       variants={fadeIn("", 0.1)}
@@ -13,13 +24,14 @@ const Newsletter = () => {
     >
       <div className='px-4 lg:px-14 max-w-screen-2xl mx-auto py-16 md:py-20'>
         <div className='flex flex-col justify-center text-center'>
+          <p className='lg:text-xl text-lg text-neutralGrey mb-3'>НАЧНИТЕ ПРЯМО СЕЙЧАС</p>
           <h2 className='lg:text-5xl md:text-4xl text-3xl mx-auto text-neutralDGrey lg:max-w-5xl font-semibold lg:leading-snug mb-8'>
             Зарегистрируйтесь в <span className='text-brandPrimary'>RetailCRM</span> и развивайте бизнес вместе с нами
           </h2>
           <div className='flex justify-center lg:gap-4 gap-2 mb-4'>
-            <button className='bg-brandPrimary lg:text-xl text-md text-white py-2 px-2 md:px-4 transition-all duration-300 rounded lg:hover:bg-neutralDGrey cursor-pointer'>
+            <button className='bg-brandPrimary lg:text-xl text-md text-white py-2 px-2 md:px-4 transition-all duration-300 rounded-3xl lg:hover:bg-neutralDGrey cursor-pointer' onClick={openModal}>
               Начать бесплатно
-            <svg
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="17"
                 height="11"
@@ -37,13 +49,16 @@ const Newsletter = () => {
                 />
               </svg>
             </button>
-            <button className='bg-neutralSilver lg:text-xl text-md text-neutralGrey py-2 px-2 md:px-4 transition-all duration-300 rounded lg:hover:text-brandPrimary cursor-pointer'>
+            <button className='bg-neutralSilver lg:text-xl text-md text-neutralGrey py-2 px-2 md:px-4 transition-all duration-300 rounded-3xl lg:hover:text-brandPrimary cursor-pointer' onClick={openModal}>
               Запись на демо
             </button>
           </div>
           <p className='lg:text-md text-sm text-neutralGrey'>Тариф PRO 14 дней бесплатно</p>
         </div>
       </div>
+
+      {/* Modal Component */}
+      <Modal isOpen={isModalOpen} onClose={closeModal} />
     </motion.div>
   );
 };
