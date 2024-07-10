@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import ru from 'react-phone-input-2/lang/ru.json';
-import './ContactForm.css'
+import './ContactForm.css';
 
 import { fadeIn } from '../../variants';
 
@@ -14,6 +14,7 @@ const ContactForm = () => {
     message: '',
     phone: '',
     queryType: 'sayHi',
+    agreePolicy: false,
   });
 
   const [errors, setErrors] = useState({
@@ -21,13 +22,16 @@ const ContactForm = () => {
     email: '',
     message: '',
     phone: '',
+    agreePolicy: '',
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
+    const val = type === 'checkbox' ? checked : value;
+    
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: val,
     });
     setErrors({
       ...errors,
@@ -113,14 +117,31 @@ const ContactForm = () => {
     return true;
   };
 
+  const validatePolicy = () => {
+    const { agreePolicy } = formData;
+    if (!agreePolicy) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        agreePolicy: 'Необходимо согласиться с политикой конфиденциальности',
+      }));
+      return false;
+    }
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      agreePolicy: '',
+    }));
+    return true;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const isNameValid = validateName();
     const isEmailValid = validateEmail();
     const isMessageValid = validateMessage();
     const isPhoneValid = validatePhone();
+    const isPolicyValid = validatePolicy();
 
-    if (isNameValid && isEmailValid && isMessageValid && isPhoneValid) {
+    if (isNameValid && isEmailValid && isMessageValid && isPhoneValid && isPolicyValid) {
       console.log('Form submitted:', formData);
       setFormData({
         name: '',
@@ -128,12 +149,14 @@ const ContactForm = () => {
         message: '',
         phone: '',
         queryType: 'sayHi',
+        agreePolicy: false,
       });
       setErrors({
         name: '',
         email: '',
         message: '',
         phone: '',
+        agreePolicy: '',
       });
     }
   };
@@ -149,7 +172,7 @@ const ContactForm = () => {
     >
       <div className="max-w-2xl mx-auto my-16 lg:my-20 p-8 bg-white rounded-3xl shadow-md">
         <h2 className="md:text-4xl text-3xl font-semibold text-neutralDGrey mb-6 text-center">Свяжитесь с нами</h2>
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="">
           <div>
             <input
               type="text"
@@ -159,7 +182,7 @@ const ContactForm = () => {
               placeholder="Имя"
               className="w-full p-4 custom-input rounded-3xl focus:outline-none focus:ring-2 focus:ring-brandPrimary"
             />
-            {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+            {errors.name && <p className="text-red-500 ml-3 text-sm mt-1">{errors.name}</p>}
           </div>
           <div>
             <input
@@ -168,9 +191,9 @@ const ContactForm = () => {
               value={formData.email}
               onChange={handleChange}
               placeholder="Email"
-              className="w-full p-4 custom-input rounded-3xl focus:outline-none focus:ring-2 focus:ring-brandPrimary"
+              className="w-full p-4 custom-input mt-6 rounded-3xl focus:outline-none focus:ring-2 focus:ring-brandPrimary"
             />
-            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+            {errors.email && <p className="text-red-500 ml-3 text-sm mt-1">{errors.email}</p>}
           </div>
           <div>
             <PhoneInput
@@ -183,8 +206,9 @@ const ContactForm = () => {
               inputClass="w-full p-4 custom-input rounded-3xl focus:outline-none focus:ring-2 focus:ring-brandPrimary"
               buttonClass="rounded-l-3xl"
               dropdownClass="text-left"
+              className='mt-6'
             />
-            {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
+            {errors.phone && <p className="text-red-500 ml-3 text-sm mt-1">{errors.phone}</p>}
           </div>
           <div>
             <textarea
@@ -192,14 +216,30 @@ const ContactForm = () => {
               value={formData.message}
               onChange={handleChange}
               placeholder="Сообщение"
-              className="w-full p-4 custom-input rounded-3xl focus:outline-none focus:ring-2 focus:ring-brandPrimary"
+              className="w-full p-4 custom-input mt-6 rounded-3xl focus:outline-none focus:ring-2 focus:ring-brandPrimary"
             ></textarea>
-            {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
+            {errors.message && <p className="text-red-500 ml-3 text-sm">{errors.message}</p>}
           </div>
+          <div className="flex items-center ml-3 mt-6">
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                name="agreePolicy"
+                checked={formData.agreePolicy}
+                onChange={handleChange}
+                id="agreePolicy"
+                className="mr-2 cursor-pointer"
+              />
+              <span className="text-sm text-gray-700 cursor-pointer">
+                Я соглашаюсь с политикой конфиденциальности
+              </span>
+            </label>
+          </div>
+          {errors.agreePolicy && <p className="text-red-500 text-sm mt-0 ml-3">{errors.agreePolicy}</p>}
           <div className="flex justify-center">
             <button
               type="submit"
-              className="bg-brandPrimary lg:text-xl text-md text-white py-2 px-2 md:px-4 transition-all duration-300 rounded-3xl lg:hover:bg-neutralDGrey cursor-pointer"
+              className="bg-brandPrimary mt-6 lg:text-xl text-md text-white py-2 px-2 md:px-4 transition-all duration-300 rounded-3xl lg:hover:bg-neutralDGrey cursor-pointer"
             >
               Отправить сообщение
             </button>
