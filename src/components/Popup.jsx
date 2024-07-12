@@ -7,7 +7,7 @@ const Popup = ({ onClose }) => {
       initial={{ x: '100%' }}
       animate={{ x: 0 }}
       exit={{ x: '100%' }}
-      className='fixed bottom-4 sm:right-4 sm:bottom-4 left-auto sm:top-auto right-0 sm:mx-0 max-w-96 bg-white bg-opacity-80 p-6 rounded-3xl shadow-lg flex items-center z-50 mx-4'
+      className='fixed bottom-6 sm:right-4 sm:bottom-4 left-auto sm:top-auto right-0 sm:mx-0 max-w-96 bg-white sm:bg-opacity-80 p-6 rounded-3xl shadow-lg flex items-center z-50 mx-4'
     >
       <div className='relative mx-auto w-full'>
         <button
