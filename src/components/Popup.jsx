@@ -12,7 +12,7 @@ const Popup = ({ onClose }) => {
       <div className='relative mx-auto w-full'>
         <button
           onClick={onClose}
-          className='absolute -top-3 right-0 text-gray-500 lg:hover:text-brandPrimary transition-all duration-300 text-2xl'
+          className='absolute -top-3 right-0 text-gray-500 lg:hover:text-brandPrimary transition-all duration-300 text-4xl sm:text-3xl'
         >
           &times;
         </button>
