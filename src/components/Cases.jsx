@@ -21,8 +21,8 @@ const Cases = () => {
           viewport={{ once: true, amount: 0.4 }}
           className='text-center md:w-1/2 mx-auto'
         >
-          <h2 className='mx-auto text-center lg:mx-0 text-3xl md:text-5xl text-neutralDGrey font-semibold mb-4'>Кейсы</h2>
-          <p className='text-xl text-neutralGrey mb-8 mx-auto'>Ознакомьтесь с нашими практическими примерами</p>
+          <h2 className='mx-auto text-center lg:mx-0 text-3xl md:text-4xl text-neutralDGrey font-semibold mb-4'>Кейсы</h2>
+          <p className='text-lg text-neutralGrey mb-8 mx-auto'>Ознакомьтесь с нашими практическими примерами</p>
         </motion.div>
         {/* all projects */}
         <div className='grid xl:grid-cols-3 grid-cols-1 gap-8 xl:gap-16 items-center justify-between'>

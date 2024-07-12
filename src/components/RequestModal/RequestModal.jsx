@@ -162,7 +162,7 @@ const RequestModal = ({ isOpen, onClose }) => {
             className={`w-full h-12 p-4 mb-1 border border-gray-300 rounded-3xl custom-input`}
           />
           {errors.name && !isSubmitting && (
-            <p className="text-left text-red-500 text-sm">{errors.name}</p>
+            <p className="text-left ml-3 text-red-500 text-sm">{errors.name}</p>
           )}
           <PhoneInput
             placeholder="Введите номер телефона"
@@ -176,7 +176,7 @@ const RequestModal = ({ isOpen, onClose }) => {
             dropdownClass="text-left"
           />
           {errors.phone && !isSubmitting && (
-            <p className="text-left text-red-500 text-sm">{errors.phone}</p>
+            <p className="text-left ml-3 text-red-500 text-sm">{errors.phone}</p>
           )}
           <input
             type="email"
@@ -187,7 +187,7 @@ const RequestModal = ({ isOpen, onClose }) => {
             className={`w-full h-12 p-4 mt-4 mb-1 border border-gray-300 rounded-3xl custom-input`}
           />
           {errors.email && !isSubmitting && (
-            <p className="text-left text-red-500 text-sm">{errors.email}</p>
+            <p className="text-left ml-3 text-red-500 text-sm">{errors.email}</p>
           )}
           <button
             onClick={handleSubmit}

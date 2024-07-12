@@ -55,8 +55,8 @@ const HowWeWork = () => {
           whileInView={'show'}
           viewport={{ once: true, amount: 0.4 }}
         >
-          <h2 className='mx-auto text-center lg:mx-0 text-3xl md:text-5xl text-neutralDGrey font-semibold mb-4'>Как мы работаем</h2>
-          <p className='text-xl text-center text-neutralGrey mb-8'>Пошаговое руководство по достижению ваших бизнес-целей</p>
+          <h2 className='mx-auto text-center lg:mx-0 text-3xl md:text-4xl text-neutralDGrey font-semibold mb-4'>Как мы работаем</h2>
+          <p className='text-lg text-center text-neutralGrey mb-8'>Пошаговое руководство по достижению ваших бизнес-целей</p>
         </motion.div>
         <motion.div
           variants={fadeIn("", 0.1)}
@@ -68,8 +68,9 @@ const HowWeWork = () => {
           {steps.map(step => (
             <div
               key={step.id}
-              className={`shadow-sm rounded-3xl ${activeSteps.includes(step.id) ? 'bg-brandPrimary' : 'bg-white'}`}
+              className={`shadow-sm rounded-3xl ${activeSteps.includes(step.id) ? 'bg-brandPrimary' : 'bg-white'} user-select-none`}
               onMouseUp={() => toggleStep(step.id)}
+              style={{ userSelect: 'none' }} // Добавлено
             >
               <div className='flex justify-between items-center p-4 cursor-pointer'>
                 <div className='flex items-center'>
@@ -90,7 +91,7 @@ const HowWeWork = () => {
                 transition={{ duration: 0.1 }}
                 className='overflow-hidden'
               >
-                <div className='p-4 bg-white text-neutralGrey' style={{borderBottomRightRadius: '23px', borderBottomLeftRadius: '23px'}}>
+                <div className='p-4 bg-white text-neutralGrey' style={{ borderBottomRightRadius: '23px', borderBottomLeftRadius: '23px' }}>
                   <p className='text-sm md:text-md lg:text-lg'>{step.description}</p>
                 </div>
               </motion.div>

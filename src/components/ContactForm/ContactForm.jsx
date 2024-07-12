@@ -216,11 +216,11 @@ const ContactForm = () => {
               value={formData.message}
               onChange={handleChange}
               placeholder="Сообщение"
-              className="w-full p-4 custom-input mt-6 rounded-3xl focus:outline-none focus:ring-2 focus:ring-brandPrimary"
+              className="w-full h-40 p-4 custom-input mt-6 rounded-3xl focus:outline-none focus:ring-2 focus:ring-brandPrimary resize-none"
             ></textarea>
             {errors.message && <p className="text-red-500 ml-3 text-sm">{errors.message}</p>}
           </div>
-          <div className="flex items-center ml-3 mt-6">
+          <div className="flex items-center ml-3 mt-2">
             <label className="flex items-center">
               <input
                 type="checkbox"
@@ -239,7 +239,7 @@ const ContactForm = () => {
           <div className="flex justify-center">
             <button
               type="submit"
-              className="bg-brandPrimary mt-6 lg:text-xl text-md text-white py-2 px-2 md:px-4 transition-all duration-300 rounded-3xl lg:hover:bg-neutralDGrey cursor-pointer"
+              className="bg-brandPrimary mt-6 lg:text-lg text-md text-white py-2 px-2 md:px-4 transition-all duration-300 rounded-3xl lg:hover:bg-neutralDGrey cursor-pointer"
             >
               Отправить сообщение
             </button>

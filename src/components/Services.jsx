@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import company1 from '../assets/company/company1.png';
 import company2 from '../assets/company/company2.png';
 import company3 from '../assets/company/company3.png';
@@ -14,10 +14,11 @@ import service3 from '../assets/services/connection.png';
 import service4 from '../assets/services/marketing.png';
 import service5 from '../assets/services/support.png';
 import service6 from '../assets/services/development.png';
+import Popup from './Popup.jsx'
 
 import { motion } from 'framer-motion';
 import { fadeIn } from '../variants';
-import {useMediaQuery, useMediaQueries} from '@react-hook/media-query'
+import { useMediaQuery } from '@react-hook/media-query';
 
 const companyLogos = [
   { src: company1, width: 'w-32', alt: 'RetailCRM Logo', link: 'https://www.retailcrm.ru/' },
@@ -41,7 +42,26 @@ const services = [
 ];
 
 const Services = () => {
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
   const isMobile = useMediaQuery('(max-width: 768px)');
+
+  const handleScroll = () => {
+    const servicesSection = document.getElementById('services');
+    if (servicesSection) {
+      const rect = servicesSection.getBoundingClientRect();
+      if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+        setIsPopupVisible(true);
+        window.removeEventListener('scroll', handleScroll);
+      }
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div className='md:px-14 px-4 py-16 md:py-20 max-w-screen2xl mx-auto' style={{ maxWidth: '1440px' }}>
@@ -53,8 +73,8 @@ const Services = () => {
           viewport={{ once: true, amount: 0.4 }}
           className='text-center mb-8'
         >
-          <h2 className='text-4xl md:text-5xl text-neutralDGrey font-semibold mb-4'>Наши партнеры</h2>
-          <p className='text-neutralGrey text-xl'>Уже интегрировали RetailCRM c:</p>
+          <h2 className='text-3xl md:text-4xl text-neutralDGrey font-semibold mb-4'>Наши партнеры</h2>
+          <p className='text-neutralGrey text-lg'>Уже интегрировали RetailCRM c:</p>
         </motion.div>
 
         <motion.div
@@ -81,10 +101,10 @@ const Services = () => {
           viewport={{ once: true, amount: 0.4 }}
           className='text-center mt-16 mb-8'
         >
-          <h2 className='text-4xl md:text-5xl text-neutralDGrey font-semibold mb-4'>
+          <h2 className='text-3xl md:text-4xl text-neutralDGrey font-semibold mb-4'>
             Услуги
           </h2>
-          <p className='mx-auto text-neutralGrey text-xl' style={{ maxWidth: '1000px' }}>
+          <p className='mx-auto text-neutralGrey text-lg' style={{ maxWidth: '1000px' }}>
             В рамках нашей работы с CRM системой RetailCRM мы предлагаем разнообразные услуги, способствующие росту вашего бизнеса в онлайне. В числе наших услуг:
           </p>
         </motion.div>
@@ -134,6 +154,8 @@ const Services = () => {
           ))}
         </div>
       )}
+
+      {isPopupVisible && <Popup onClose={() => setIsPopupVisible(false)} />}
     </div>
   );
 };

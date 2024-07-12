@@ -51,7 +51,7 @@ const Technologies = () => {
           whileInView={'show'}
           viewport={{ once: true, amount: 0.4 }}
         >
-          <h2 className='lg:text-5xl md:text-4xl text-3xl font-semibold text-center text-neutralDGrey mb-12'>Наши технологии</h2>
+          <h2 className='md:text-4xl text-3xl font-semibold text-center text-neutralDGrey mb-12'>Наши технологии</h2>
         </motion.div>
         <motion.div
           variants={fadeIn("", 0.1)}

@@ -25,11 +25,11 @@ const Newsletter = () => {
       <div className='px-4 lg:px-14 max-w-screen-2xl mx-auto py-16 md:py-20'>
         <div className='flex flex-col justify-center text-center'>
           <p className='lg:text-xl text-lg text-neutralGrey mb-3'>НАЧНИТЕ ПРЯМО СЕЙЧАС</p>
-          <h2 className='lg:text-5xl md:text-4xl text-3xl mx-auto text-neutralDGrey lg:max-w-5xl font-semibold lg:leading-snug mb-8'>
+          <h2 className='md:text-4xl text-3xl mx-auto text-neutralDGrey lg:max-w-3xl font-semibold lg:leading-snug mb-7'>
             Зарегистрируйтесь в <span className='text-brandPrimary'>RetailCRM</span> и развивайте бизнес вместе с нами
           </h2>
           <div className='flex justify-center lg:gap-4 gap-2 mb-4'>
-            <button className='bg-brandPrimary lg:text-xl text-md text-white py-2 px-2 md:px-4 transition-all duration-300 rounded-3xl lg:hover:bg-neutralDGrey cursor-pointer' onClick={openModal}>
+            <button className='bg-brandPrimary lg:text-lg text-md text-white py-2 px-2 md:px-4 transition-all duration-300 rounded-3xl lg:hover:bg-neutralDGrey cursor-pointer' onClick={openModal}>
               Начать бесплатно
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +49,7 @@ const Newsletter = () => {
                 />
               </svg>
             </button>
-            <button className='bg-neutralSilver lg:text-xl text-md text-neutralGrey py-2 px-2 md:px-4 transition-all duration-300 rounded-3xl lg:hover:text-brandPrimary cursor-pointer' onClick={openModal}>
+            <button className='bg-neutralSilver lg:text-lg text-md text-neutralGrey py-2 px-2 md:px-4 transition-all duration-300 rounded-3xl lg:hover:text-brandPrimary cursor-pointer' onClick={openModal}>
               Запись на демо
             </button>
           </div>

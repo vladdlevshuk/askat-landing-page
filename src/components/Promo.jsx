@@ -26,8 +26,8 @@ const Promo = () => {
             <img src={aboutImg} alt="About Image"/>
           </div>
           <div className='lg:w-3/5 mx-auto flex flex-col'>
-            <h2 className='mx-auto text-center lg:mx-0 lg:text-left text-3xl md:text-5xl text-neutralDGrey font-semibold mb-4 md:w-4/5'>Давайте превратим идею в реальность</h2>
-            <p className='mx-auto text-center lg:mx-0 lg:text-left md:w-3/4 text-xl text-neutralGrey mb-8'>Свяжитесь с нами сегодня, чтобы узнать больше о том, как наши услуги
+            <h2 className='mx-auto text-center lg:mx-0 lg:text-left text-3xl md:text-4xl text-neutralDGrey font-semibold mb-4 md:w-4/5'>Давайте превратим идею в реальность</h2>
+            <p className='mx-auto text-center lg:mx-0 lg:text-left md:w-3/4 text-lg text-neutralGrey mb-8'>Свяжитесь с нами сегодня, чтобы узнать больше о том, как наши услуги
             могут помочь вашему бизнесу расти и преуспевать в Интернете</p>
             <button onClick={openModal} className='mx-auto lg:mx-0 btn-primary max-w-sm lg:max-w-md'>Получить бесплатное предложение</button>
           </div>
