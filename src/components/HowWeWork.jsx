@@ -70,7 +70,7 @@ const HowWeWork = () => {
               key={step.id}
               className={`shadow-sm rounded-3xl ${activeSteps.includes(step.id) ? 'bg-brandPrimary' : 'bg-white'} user-select-none`}
               onMouseUp={() => toggleStep(step.id)}
-              style={{ userSelect: 'none' }} // Добавлено
+              style={{ userSelect: 'none' }}
             >
               <div className='flex justify-between items-center p-4 cursor-pointer'>
                 <div className='flex items-center'>

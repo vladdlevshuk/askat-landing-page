@@ -28,7 +28,7 @@ const ContactForm = () => {
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     const val = type === 'checkbox' ? checked : value;
-    
+
     setFormData({
       ...formData,
       [name]: val,
@@ -235,7 +235,7 @@ const ContactForm = () => {
               </span>
             </label>
           </div>
-          {errors.agreePolicy && <p className="text-red-500 text-sm mt-0 ml-3">{errors.agreePolicy}</p>}
+          {errors.agreePolicy && <p className="text-red-500 text-sm mt-1 ml-3">{errors.agreePolicy}</p>}
           <div className="flex justify-center">
             <button
               type="submit"

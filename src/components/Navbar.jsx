@@ -63,7 +63,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className='w-full mx-auto bg-white md:bg-transparent fixed top-0 left-0 right-0'>
+      <header className='w-full mx-auto bg-white md:bg-transparent fixed top-0 left-0 right-0' style={{ userSelect: 'none' }}>
         <nav className={`lg:px-14 px-5 ${isSticky ? "sticky top-0 left-0 right-0 border-b bg-white duration-300" : ""}`}
           style={{paddingTop: '18px', paddingBottom: '18px'}}
         >

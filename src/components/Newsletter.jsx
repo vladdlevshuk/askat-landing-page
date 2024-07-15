@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../variants';
-import Modal from './RequestModal/RequestModal.jsx'; // Adjust the path based on your project structure
+import Modal from './RequestModal/RequestModal.jsx';
 
 const Newsletter = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
