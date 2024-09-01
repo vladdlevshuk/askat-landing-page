@@ -1,0 +1,21 @@
+.nav-items-lg,
+.button-lg {
+  display: none;
+}
+
+.burger-menu {
+  display: flex;
+}
+
+@media (min-width: 1400px) {
+  .nav-items-lg,
+  .button-lg {
+    display: flex;
+  }
+}
+
+@media (min-width: 1400px) {
+  .burger-menu {
+    display: none;
+  }
+}

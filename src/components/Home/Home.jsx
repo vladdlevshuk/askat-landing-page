@@ -17,30 +17,33 @@ const Home = () => {
   };
 
   return (
-    <div className='bg-neutralSilver mt-20 mx-auto' id='home'>
-      <div className='lg:px-14 px-5 max-w-screen-2xl mx-auto container' style={{ height: '92vh', maxWidth: '1440px', position: 'relative' }}>
-        <div className="py-12 md:py-24 flex flex-col lg:flex-row-reverse items-center justify-between gap-12">
-          <div className='hidden lg:block w-full md:w-auto justify-center'>
-            <img src={banner1} alt="Banner" className='w-full md:w-auto' style={{ maxWidth: '500px' }} />
-          </div>
+    <div className='bg-neutralSilver home-wrap mt-20 mx-auto' id='home'>
+      <div className='lg:px-5 px-5 max-w-screen-2xl mx-auto container' style={{ height: '92vh', maxWidth: '1440px', position: 'relative' }}>
+        <div className="py-12 md:py-24 flex flex-col-reverse lg:flex-row-reverse items-center justify-between">
+        <div className='w-full flex justify-center lg:block'>
+          <img
+            src={banner1}
+            alt="Banner"
+            className='lg:w-full md:w-3/4 md:mt-2 mt-12 h-auto'
+          />
+        </div>
           {/* hero text */}
-          <div className='lg:text-left text-center'>
-            <h1 className='text-3xl xl:text-5xl md:text-4xl font-semibold mb-4 text-neutralDGrey lg:w-3/4 leading-snug'>
+          <div className='lg:text-left md:text-center text-left md:block flex flex-col items-start'>
+            <h1 className='text-3xl mx-auto xl:text-5xl md:text-4xl font-semibold mb-4 text-neutralDGrey md:leading-snug leading-3' style={{ maxWidth: '650px' }}>
               Интегратор
               <span className='text-brandPrimary leading-snug'> RetailCRM</span> для
               <span className='text-brandPrimary leading-snug'> eCommerce</span>,
               ритейла и <span className='text-brandPrimary leading-snug'> HoReCa</span>
             </h1>
-            <p className='text-neutralGrey text-lg leading-8 mb-8 mx-auto lg:mx-0' style={{ maxWidth: '650px' }}>
+            <p className='text-neutralGrey text-lg md:leading-8 leading-6 mb-8 mx-auto lg:mx-0'>
               Ведем ваш бизнес к успеху через автоматизацию
               продаж и маркетинга для eCommerce, Ритейла и HoReCa
             </p>
             <div className='flex lg:justify-start justify-center'>
-              <button className='btn-primary' onClick={openModal}>Записаться на консультацию</button>
+              <button className='btn-primary' onClick={openModal}>Получить консультацию</button>
             </div>
           </div>
         </div>
-        {/* Стрелка, показываемая только на больших экранах */}
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 hidden lg:block">
           <FaChevronDown className="text-neutralGrey text-3xl animate-bounce" />
         </div>

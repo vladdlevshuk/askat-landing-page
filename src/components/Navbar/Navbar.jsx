@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import logo from '../assets/logo.png';
+import logo from '../../assets/logo.png';
 import { Link } from 'react-scroll';
 import { FaXmark, FaBars, FaWhatsapp, FaTelegram } from 'react-icons/fa6';
-import Modal from './RequestModal/RequestModal.jsx';
+import Modal from '../RequestModal/RequestModal.jsx';
+import './Navbar.css'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -58,7 +59,9 @@ const Navbar = () => {
     { link: "О нас", path: "home" },
     { link: "Услуги", path: "services" },
     { link: "Кейсы", path: "cases" },
-    { link: "Контакты", path: "contacts" }
+    { link: "Контакты", path: "contacts" },
+    { link: "Дополнительно", path: "contacts" },
+    { link: "Решения для RetailCRM", path: "contacts" }
   ];
 
   return (
@@ -68,13 +71,19 @@ const Navbar = () => {
           style={{paddingTop: '18px', paddingBottom: '18px'}}
         >
           <div className='flex justify-between mx-auto items-center text-base gap-8' style={{maxWidth: '1440px'}}>
-            <a href="/" className='text-3xl font-semibold flex items-center' onClick={() => setIsMenuOpen(false)}>
-              <img src={logo} alt="Logo" className='w-8 inline-block items-center' />
-              <span className='text-[#263238] ml-0'>ASKAT</span>
-            </a>
+            <div className='flex flex-row gap-3'>
+              <a href="/" className='text-3xl font-semibold flex items-center' onClick={() => setIsMenuOpen(false)}>
+                <img src={logo} alt="Logo" className='w-8 mr-2 inline-block items-center' />
+                <span className='text-[#263238] ml-0 font-black'>ASKAT</span>
+              </a>
+              <div className='md:flex hidden flex-col'>
+                <div className='text-neutralDGrey font-bold'>+7 (911) <span className='text-brandPrimary'>355-34-87</span></div>
+                <span className='text-neutralDGrey'>поддержка 24/7</span>
+              </div>
+            </div>
 
             {/* nav items for large devices */}
-            <ul className='md:flex space-x-12 hidden'>
+            <ul className='space-x-8 nav-items-lg'>
               {navItems.map(({ link, path }) => (
                 <Link
                   to={path}
@@ -92,7 +101,8 @@ const Navbar = () => {
             </ul>
 
             {/* icons and button for large devices */}
-            <div className='hidden lg:flex items-center gap-4'>
+            <div className='items-center gap-4 button-lg'>
+              {/*
               <div className='hidden lg:flex justify-between align-center gap-4'>
                 <a href="https://t.me/yourusername" target="_blank" rel="noopener noreferrer">
                   <FaTelegram className='text-neutralDGrey h-6 w-6 lg:hover:text-brandPrimary transition-all duration-300' />
@@ -101,6 +111,7 @@ const Navbar = () => {
                   <FaWhatsapp className='text-neutralDGrey h-6 w-6 lg:hover:text-brandPrimary transition-all duration-300' />
                 </a>
               </div>
+              */}
               <button
                 className='bg-brandPrimary text-lg text-white py-2 px-4 transition-all duration-300 lg:hover:bg-neutralDGrey cursor-pointer rounded-3xl'
                 onClick={openModal}
@@ -110,13 +121,13 @@ const Navbar = () => {
             </div>
 
             {/* menu btn for only mobile devices */}
-            <div className='flex items-center md:hidden'>
-              <a href="https://t.me/yourusername" target="_blank" rel="noopener noreferrer">
-                <FaTelegram className='text-neutralDGrey h-6 w-6 mr-4' />
-              </a>
-              <a href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer">
-                <FaWhatsapp className='text-neutralDGrey h-6 w-6 mr-4' />
-              </a>
+            <div className=' items-center burger-menu'>
+              <button
+                className='bg-brandPrimary text-lg mr-3 text-white py-2 px-4 transition-all duration-300 lg:hover:bg-neutralDGrey cursor-pointer rounded-3xl'
+                onClick={openModal}
+              >
+                Заказать
+              </button>
               <button
                 onClick={toggleMenu}
                 className='text-neutralDGrey focus:outline-none focus:text-gray-500 cursor-pointer'
@@ -141,9 +152,6 @@ const Navbar = () => {
                 {link}
               </Link>
             ))}
-            <button className='block text-lg text-white cursor-pointer first:font-medium text-left' onClick={openModal}>
-              Заказать
-            </button>
           </div>
         </nav>
       </header>

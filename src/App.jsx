@@ -1,5 +1,5 @@
 import './App.css'
-import Navbar from './components/Navbar'
+import Navbar from './components/Navbar/Navbar.jsx'
 import Home from './components/Home/Home.jsx'
 import Services from './components/Services.jsx'
 import Promo from './components/Promo.jsx'
