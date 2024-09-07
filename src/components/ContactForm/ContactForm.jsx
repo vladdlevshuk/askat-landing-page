@@ -239,7 +239,7 @@ const ContactForm = () => {
           <div className="flex justify-center">
             <button
               type="submit"
-              className="bg-brandPrimary mt-6 lg:text-lg text-md text-white py-2 px-2 md:px-4 transition-all duration-300 rounded-3xl lg:hover:bg-neutralDGrey cursor-pointer"
+              className="btn-primary mt-6"
             >
               Отправить сообщение
             </button>

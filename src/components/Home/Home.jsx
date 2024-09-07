@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import banner1 from '../../assets/banner.png';
+import banner1 from '../../assets/img/home/banner.png';
 import '../../App.css';
 import './Home.css';
 import Modal from '../RequestModal/RequestModal.jsx';
@@ -24,15 +24,15 @@ const Home = () => {
           <img
             src={banner1}
             alt="Banner"
-            className='lg:w-full md:w-3/4 md:mt-2 mt-12 h-auto'
+            className='lg:w-full md:w-3/4 md:mt-2 mt-12 h-auto mb-12'
           />
         </div>
           {/* hero text */}
           <div className='lg:text-left md:text-center text-left md:block flex flex-col items-start'>
-            <h1 className='text-3xl mx-auto xl:text-5xl md:text-4xl font-semibold mb-4 text-neutralDGrey md:leading-snug leading-3' style={{ maxWidth: '650px' }}>
+            <h1 className='text-3xl mx-auto xl:text-5xl md:text-4xl font-semibold mb-4 text-neutralDGrey md:leading-3' style={{ maxWidth: '650px' }}>
               Интегратор
               <span className='text-brandPrimary leading-snug'> RetailCRM</span> для
-              <span className='text-brandPrimary leading-snug'> eCommerce</span>,
+              <span className='text-brandPrimary md:leading-snug'> eCommerce</span>,
               ритейла и <span className='text-brandPrimary leading-snug'> HoReCa</span>
             </h1>
             <p className='text-neutralGrey text-lg md:leading-8 leading-6 mb-8 mx-auto lg:mx-0'>

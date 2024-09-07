@@ -1,7 +1,7 @@
 import React from 'react'
 import { Footer } from "flowbite-react";
 import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-icons/bs";
-import logo from '../assets/logo.png';
+import logo from '../assets/img/logo.png';
 import { FaXmark, FaBars, FaWhatsapp, FaTelegram } from 'react-icons/fa6';
 
 import { motion } from 'framer-motion';
@@ -20,7 +20,7 @@ const MyFooter = () => {
         <div className="grid mx-auto w-full justify-between sm:gap-16 gap-6 sm:flex sm:justify-between md:flex md:grid-cols-1" style={{maxWidth: '1440px'}}>
           <div className='flex flex-col justify-between'>
             <a href="/" className='text-3xl font-semibold flex items-center'>
-              <img src={logo} alt="Logo" className='w-8 inline-block items-center' />
+              <img src={logo} alt="Logo" className='w-8 inline-block items-center mr-2' />
               <span className='text-[#FFFFFF] ml-0'>ASKAT</span>
             </a>
             <div className='flex flex-col gap-1 text-white mt-8 font-normal'>

@@ -63,7 +63,7 @@ const Technologies = () => {
           {technologies.map(tech => (
             <motion.div
               key={tech.id}
-              className={`bg-white p-6 rounded-3xl cursor-pointer shadow-md flex-grow flex-shrink-0 transition-all duration-300 ${hoveredCard === tech.id ? 'hover:bg-brandPrimary' : ''}`}
+              className={`bg-white p-6 rounded-3xl cursor-pointer shadow-md flex-grow flex-shrink-0 transition-all duration-300 ${hoveredCard === tech.id ? 'lg:hover:bg-brandPrimary' : ''}`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onHoverStart={() => handleHover(tech.id)}

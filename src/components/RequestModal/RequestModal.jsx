@@ -191,7 +191,7 @@ const RequestModal = ({ isOpen, onClose }) => {
           )}
           <button
             onClick={handleSubmit}
-            className="bg-brandPrimary mt-4 text-white py-2 px-4 transition-all duration-300 rounded-3xl lg:hover:bg-neutralDGrey w-full"
+            className="btn-primary mt-4 w-full"
           >
             Подтвердить
           </button>

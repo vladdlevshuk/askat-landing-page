@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import company1 from '../assets/company/company1.png';
-import company2 from '../assets/company/company2.png';
-import company3 from '../assets/company/company3.png';
-import company4 from '../assets/company/company4.png';
-import company5 from '../assets/company/company5.png';
-import company6 from '../assets/company/company6.png';
-import company7 from '../assets/company/company7.png';
-import company8 from '../assets/company/company8.png';
-import company9 from '../assets/company/company9.png';
-import service1 from '../assets/services/audit.png';
-import service2 from '../assets/services/integration.png';
-import service3 from '../assets/services/connection.png';
-import service4 from '../assets/services/marketing.png';
-import service5 from '../assets/services/support.png';
-import service6 from '../assets/services/development.png';
+import company1 from '../assets/img/company/company1.png';
+import company2 from '../assets/img/company/company2.png';
+import company3 from '../assets/img/company/company3.png';
+import company4 from '../assets/img/company/company4.png';
+import company5 from '../assets/img/company/company5.png';
+import company6 from '../assets/img/company/company6.png';
+import company7 from '../assets/img/company/company7.png';
+import company8 from '../assets/img/company/company8.png';
+import company9 from '../assets/img/company/company9.png';
+import service1 from '../assets/img/services/audit.png';
+import service2 from '../assets/img/services/integration.png';
+import service3 from '../assets/img/services/connection.png';
+import service4 from '../assets/img/services/marketing.png';
+import service5 from '../assets/img/services/support.png';
+import service6 from '../assets/img/services/development.png';
 import Popup from './Popup.jsx'
 
 import { motion } from 'framer-motion';
-import { fadeIn } from '../variants';
+import { fadeIn } from '../variants.js';
 import { useMediaQuery } from '@react-hook/media-query';
 
 const companyLogos = [
@@ -105,7 +105,7 @@ const Services = () => {
             Услуги
           </h2>
           <p className='mx-auto text-neutralGrey text-lg' style={{ maxWidth: '1000px' }}>
-            В рамках нашей работы с CRM системой RetailCRM мы предлагаем разнообразные услуги, способствующие росту вашего бизнеса в онлайне. В числе наших услуг:
+            В рамках нашей работы с CRM системой RetailCRM мы предлагаем разнообразные услуги, способствующие росту вашего бизнеса в онлайне, в числе которых:
           </p>
         </motion.div>
       </div>
@@ -140,10 +140,10 @@ const Services = () => {
               whileInView={'show'}
               viewport={{ once: true, amount: 0.4 }}
               key={service.id}
-              className='px-4 py-7 text-center md:w-[310px] mx-auto lg:h-72 rounded-3xl shadow-md cursor-pointer lg:hover:-translate-y-2
-              lg:hover:border-b-4 lg:hover:border-brandPrimary transition-all duration-300 flex items-center justify-center h-full'
+              className='px-4 py-7 text-center md:w-[310px] mx-auto lg:h-72 lg:hover:-translate-y-2
+              transition-all duration-300 flex items-center justify-center h-full'
             >
-              <div className='lg:hover:-translate-y-1 transition-all duration-300 flex flex-col items-start h-full'>
+              <div className='transition-all duration-300 flex flex-col items-start h-full'>
                 <div className='bg-[#cde6ff] h-12 w-12 mx-auto rounded-tl-3xl rounded-br-3xl'>
                   <img src={service.image} alt="Service Icon" className='-ml-4 w-10'/>
                 </div>

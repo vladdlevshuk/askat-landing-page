@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/img/logo.png';
 import { Link } from 'react-scroll';
 import { FaXmark, FaBars, FaWhatsapp, FaTelegram } from 'react-icons/fa6';
 import Modal from '../RequestModal/RequestModal.jsx';
@@ -113,7 +113,7 @@ const Navbar = () => {
               </div>
               */}
               <button
-                className='bg-brandPrimary text-lg text-white py-2 px-4 transition-all duration-300 lg:hover:bg-neutralDGrey cursor-pointer rounded-3xl'
+                className='btn-primary'
                 onClick={openModal}
               >
                 Заказать
@@ -123,7 +123,7 @@ const Navbar = () => {
             {/* menu btn for only mobile devices */}
             <div className=' items-center burger-menu'>
               <button
-                className='bg-brandPrimary text-lg mr-3 text-white py-2 px-4 transition-all duration-300 lg:hover:bg-neutralDGrey cursor-pointer rounded-3xl'
+                className='btn-primary mr-3'
                 onClick={openModal}
               >
                 Заказать

@@ -1,7 +1,7 @@
 import React from 'react'
-import firstProject from '../assets/cases/first-project.png'
-import secondProject from '../assets/cases/second-project.png'
-import thirdProject from '../assets/cases/third-project.png'
+import firstProject from '../assets/img/cases/first-project.png'
+import secondProject from '../assets/img/cases/second-project.png'
+import thirdProject from '../assets/img/cases/third-project.png'
 
 import { motion } from 'framer-motion';
 import { fadeIn } from '../variants';
