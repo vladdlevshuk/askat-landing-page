@@ -10,11 +10,14 @@ const RequestModal = ({ isOpen, onClose }) => {
     name: '',
     phone: '',
     email: '',
+    message: '',
+    agree: false,
   });
   const [errors, setErrors] = useState({
     name: '',
     phone: '',
     email: '',
+    agree: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -46,20 +49,23 @@ const RequestModal = ({ isOpen, onClose }) => {
       name: '',
       phone: '',
       email: '',
+      message: '',
+      agree: false,
     });
     setErrors({
       name: '',
       phone: '',
       email: '',
+      agree: '',
     });
     setIsSubmitting(false);
   };
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value, type, checked } = event.target;
     setFormData({
       ...formData,
-      [name]: value.trim(),
+      [name]: type === 'checkbox' ? checked : value,
     });
     setErrors({
       ...errors,
@@ -67,7 +73,7 @@ const RequestModal = ({ isOpen, onClose }) => {
     });
   };
 
-  const handlePhoneChange = (value, data) => {
+  const handlePhoneChange = (value) => {
     setFormData({
       ...formData,
       phone: value,
@@ -130,13 +136,29 @@ const RequestModal = ({ isOpen, onClose }) => {
     return isValid;
   };
 
+  const validateAgree = () => {
+    if (!formData.agree) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        agree: 'Необходимо согласие с политикой конфиденциальности',
+      }));
+      return false;
+    }
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      agree: '',
+    }));
+    return true;
+  };
+
   const handleSubmit = () => {
     setIsSubmitting(true);
     const isNameValid = validateName();
     const isEmailValid = validateEmail();
     const isPhoneValid = validatePhone();
+    const isAgreeValid = validateAgree();
 
-    if (isNameValid && isEmailValid && isPhoneValid) {
+    if (isNameValid && isEmailValid && isPhoneValid && isAgreeValid) {
       console.log('Данные для отправки:', formData);
       resetForm();
       onClose();
@@ -148,21 +170,37 @@ const RequestModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-gray-600 bg-opacity-70 flex items-center justify-center z-50">
-      <div ref={modalRef} className="bg-white p-8 rounded-3xl shadow-lg w-full max-w-md mx-5">
+    <div className="fixed inset-0 bg-gray-900 bg-opacity-70 flex items-center justify-center z-50">
+      <div ref={modalRef} className="bg-white py-10 px-8 rounded-3xl shadow-lg w-full max-w-md mx-5 relative">
+        <button
+          className="absolute top-4 right-6 text-2xl font-bold text-neutralDGrey lg:hover:text-brandPrimary transition-all"
+          onClick={onClose}
+        >
+          &times;
+        </button>
         <div className="text-center">
-          <h2 className="text-3xl text-neutralDGrey font-semibold mb-2">Оставить заявку</h2>
-          <p className='text-neutralGrey text-sm mb-4'>Заполните форму ниже и мы свяжемся с вами, чтобы обсудить ваш бизнес-запрос</p>
+          <h2 className="text-3xl text-neutralDGrey font-semibold mb-6">Оформить заказ</h2>
           <input
             type="text"
             name="name"
-            placeholder="Ваше имя"
+            placeholder="Имя"
             value={formData.name}
             onChange={handleChange}
-            className={`w-full h-12 p-4 mb-1 border border-gray-300 rounded-3xl custom-input`}
+            className={`w-full h-12 p-4 mb-1 border rounded-2xl ${errors.name ? 'border-red-500' : ''} custom-input custom-placeholder`}
           />
           {errors.name && !isSubmitting && (
             <p className="text-left ml-3 text-red-500 text-sm">{errors.name}</p>
+          )}
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            className={`w-full h-12 p-4 mt-4 mb-1 border rounded-2xl ${errors.email ? 'border-red-500' : ''} custom-input custom-placeholder`}
+          />
+          {errors.email && !isSubmitting && (
+            <p className="text-left ml-3 text-red-500 text-sm">{errors.email}</p>
           )}
           <PhoneInput
             placeholder="Введите номер телефона"
@@ -171,35 +209,42 @@ const RequestModal = ({ isOpen, onClose }) => {
             value={formData.phone}
             onChange={handlePhoneChange}
             regions={'ex-ussr'}
-            inputClass={`w-full h-12 p-4 border border-gray-300 rounded-3xl pl-0`}
+            inputClass={`w-full h-12 p-4 border border-gray-300 rounded-3xl pl-0 ${errors.phone ? 'border-red-500' : ''} custom-placeholder`}
             containerClass="flex gap-8 mt-4"
             dropdownClass="text-left"
           />
           {errors.phone && !isSubmitting && (
             <p className="text-left ml-3 text-red-500 text-sm">{errors.phone}</p>
           )}
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
+          <textarea
+            name="message"
+            placeholder="Сообщение"
+            value={formData.message}
             onChange={handleChange}
-            className={`w-full h-12 p-4 mt-4 mb-1 border border-gray-300 rounded-3xl custom-input`}
+            maxLength={300}
+            className={`w-full h-64 p-4 mt-4 border rounded-2xl ${errors.message ? 'border-red-500' : ''} custom-input resize-none custom-placeholder`}
           />
-          {errors.email && !isSubmitting && (
-            <p className="text-left ml-3 text-red-500 text-sm">{errors.email}</p>
-          )}
+          <p className="text-left ml-3 text-gray-400 text-sm">
+            {formData.message.length}/300 символов
+          </p>
+          <div className="flex items-center mt-4 ml-2">
+            <input
+              type="checkbox"
+              id="agree-checkbox"
+              name="agree"
+              checked={formData.agree}
+              onChange={handleChange}
+              className="mr-3"
+            />
+            <label htmlFor="agree-checkbox" className={`text-gray-700 text-xs cursor-pointer select-none ${errors.agree ? 'text-red-500' : ''}`}>
+              Я соглашаюсь с политикой конфиденциальности
+            </label>
+          </div>
           <button
             onClick={handleSubmit}
-            className="btn-primary mt-4 w-full"
+            className="btn-primary mt-6"
           >
-            Подтвердить
-          </button>
-          <button
-            onClick={onClose}
-            className="mt-4 text-gray-500 transition-all duration-300 rounded-3xl lg:hover:text-brandPrimary"
-          >
-            Закрыть
+            Отправить сообщение
           </button>
         </div>
       </div>

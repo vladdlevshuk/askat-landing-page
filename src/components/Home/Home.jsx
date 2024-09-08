@@ -18,13 +18,13 @@ const Home = () => {
 
   return (
     <div className='bg-neutralSilver home-wrap mt-20 mx-auto' id='home'>
-      <div className='lg:px-5 px-5 max-w-screen-2xl mx-auto container' style={{ height: '92vh', maxWidth: '1440px', position: 'relative' }}>
-        <div className="py-12 md:py-24 flex flex-col-reverse lg:flex-row-reverse items-center justify-between">
+      <div className='lg:px-5 px-5 pb-12 max-w-screen-2xl mx-auto container' style={{ height: '92vh', maxWidth: '1440px', position: 'relative' }}>
+        <div className="md:py-24 flex flex-col-reverse lg:flex-row-reverse items-center justify-between">
         <div className='w-full flex justify-center lg:block'>
           <img
             src={banner1}
             alt="Banner"
-            className='lg:w-full md:w-3/4 md:mt-2 mt-12 h-auto mb-12'
+            className='lg:w-full md:w-3/4 md:mt-2 mt-12 h-auto'
           />
         </div>
           {/* hero text */}

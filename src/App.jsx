@@ -20,8 +20,6 @@ export default function App() {
       <Cases />
       <HowWeWork />
       <Technologies />
-      <Newsletter />
-      <ContactForm />
       <Footer />
     </>
   )

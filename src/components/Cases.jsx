@@ -39,7 +39,7 @@ const Cases = () => {
               <img
                 src={project.image}
                 alt="Project Image"
-                className='cursor-pointer rounded-3xl transition-all duration-300 max-w-96'
+                className='cursor-pointer rounded-3xl transition-all duration-300 sm:max-w-md xl:max-w-96'
               />
               <div className='absolute inset-0 rounded-3xl flex flex-col items-center justify-center bg-gradient-to-b from-black/70 to-transparent'>
                 <h3 className='text-white text-xl max-w-72 font-semibold text-center px-4 mb-4'>{project.title}</h3>
