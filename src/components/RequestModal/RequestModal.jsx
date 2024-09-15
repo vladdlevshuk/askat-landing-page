@@ -222,7 +222,7 @@ const RequestModal = ({ isOpen, onClose }) => {
             value={formData.message}
             onChange={handleChange}
             maxLength={300}
-            className={`w-full h-64 p-4 mt-4 border rounded-2xl ${errors.message ? 'border-red-500' : ''} custom-input resize-none custom-placeholder`}
+            className={`w-full md:h-64 h-32 p-4 mt-4 border rounded-2xl ${errors.message ? 'border-red-500' : ''} custom-input resize-none custom-placeholder`}
           />
           <p className="text-left ml-3 text-gray-400 text-sm">
             {formData.message.length}/300 символов
