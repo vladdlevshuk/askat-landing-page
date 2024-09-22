@@ -8,6 +8,7 @@ import Footer from './components/Footer.jsx'
 import HowWeWork from './components/HowWeWork/HowWeWork.jsx'
 import Technologies from './components/Technologies.jsx'
 import ContactForm from './components/ContactForm/ContactForm.jsx'
+import { SignupForm } from './components/SignupForm/SignupForm.jsx'
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
       <Cases />
       <HowWeWork />
       <Technologies />
+      <SignupForm />
       <Footer />
     </>
   )

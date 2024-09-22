@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants.js';
-import Modal from '../RequestModal/RequestModal.jsx';
 import presentIcon from '../../assets/img/promo/button-present.png';
+import SignupModal from '../SignupModal.jsx'; // Импортируем модалку
 import './Promo.css';
 
 const Promo = () => {
@@ -10,6 +10,10 @@ const Promo = () => {
 
   const openModal = () => {
     setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -34,9 +38,12 @@ const Promo = () => {
               Свяжитесь с нами сегодня, чтобы узнать больше о том, как наши услуги могут помочь вашему бизнесу расти и преуспевать в Интернете
             </p>
           </div>
-          <button class="relative bg-brandPrimary text-white h-14 my-auto rounded-full px-6 py-3 flex items-center max-w-96 lg:mx-0 mx-auto lg:right-24 right-0 transition duration-300 ease-in-out transform lg:hover:bg-blue-600 lg:hover:shadow-lg lg:group">
-            <span class="mr-12">Получить бесплатное предложение</span>
-            <span class="absolute right-0 w-12 h-12 bg-white rounded-full flex-shrink-0 mr-1 p-3 transition-transform duration-300 ease-in-out transform group-hover:scale-110">
+          <button 
+            className="relative bg-brandPrimary text-white h-14 my-auto rounded-full px-6 py-3 flex items-center max-w-96 lg:mx-0 mx-auto lg:right-24 right-0 transition duration-300 ease-in-out transform lg:hover:bg-blue-600 lg:hover:shadow-lg lg:group"
+            onClick={openModal}
+          >
+            <span className="mr-12">Получить бесплатное предложение</span>
+            <span className="absolute right-0 w-12 h-12 bg-white rounded-full flex-shrink-0 mr-1 p-3 transition-transform duration-300 ease-in-out transform group-hover:scale-110">
               <img src={presentIcon} alt="Present Icon" width={25} height={25}/>
             </span>
           </button>
@@ -44,7 +51,7 @@ const Promo = () => {
       </div>
 
       {/* Модальное окно */}
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <SignupModal isOpen={isModalOpen} onClose={closeModal} />
     </motion.div>
   );
 };

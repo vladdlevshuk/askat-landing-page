@@ -77,7 +77,9 @@ const Navbar = () => {
                 <span className='text-[#263238] ml-0 font-black'>ASKAT</span>
               </a>
               <div className='md:flex hidden flex-col'>
-                <div className='text-neutralDGrey font-bold'>+7 (911) <span className='text-brandPrimary'>355-34-87</span></div>
+                <a href="tel:+79113553487" className='text-neutralDGrey font-bold'>
+                  +7 (911) <span className='text-brandPrimary'>355-34-87</span>
+                </a>
                 <span className='text-neutralDGrey'>поддержка 24/7</span>
               </div>
             </div>
@@ -139,6 +141,12 @@ const Navbar = () => {
 
           {/* nav items for mobile devices */}
           <div className={`flex flex-col gap-8 px-4 mt-16 py-7 bg-brandPrimary ${isMenuOpen ? "block fixed top-2 right-0 left-0" : "hidden"}`}>
+            <div className='flex flex-col'>
+                <a href="tel:+79113553487" className='text-white text-lg'>
+                  +7 (911) 355-34-87
+                </a>
+                <span className='text-white'>поддержка 24/7</span>
+            </div>
             {navItems.map(({ link, path }) => (
               <Link
                 to={path}

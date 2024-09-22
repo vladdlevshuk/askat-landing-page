@@ -18,7 +18,7 @@ const Home = () => {
 
   return (
     <div className='bg-neutralSilver home-wrap mt-20 mx-auto' id='home'>
-      <div className='lg:px-5 px-5 pb-12 max-w-screen-2xl mx-auto container' style={{ height: '92vh', maxWidth: '1440px', position: 'relative' }}>
+      <div className='lg:px-5 px-5 pb-12 pt-12 md:pt-0 max-w-screen-2xl mx-auto container' style={{ height: '92vh', maxWidth: '1440px', position: 'relative' }}>
         <div className="md:py-24 flex flex-col-reverse lg:flex-row-reverse items-center justify-between">
         <div className='w-full flex justify-center lg:block'>
           <img
@@ -29,7 +29,7 @@ const Home = () => {
         </div>
           {/* hero text */}
           <div className='lg:text-left md:text-center text-left md:block flex flex-col items-start'>
-            <h1 className='text-3xl mx-auto xl:text-5xl md:text-4xl font-semibold mb-4 text-neutralDGrey md:leading-3' style={{ maxWidth: '650px' }}>
+            <h1 className='hero-title text-3xl mx-auto xl:text-5xl md:text-4xl font-semibold mb-4 text-neutralDGrey md:leading-3' style={{ maxWidth: '650px' }}>
               Интегратор
               <span className='text-brandPrimary leading-snug'> RetailCRM</span> для
               <span className='text-brandPrimary md:leading-snug'> eCommerce</span>,
