@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import logo from '../assets/img/signupform/logo.png';
 import coins from '../assets/img/signupform/coins.png';
 import gift from '../assets/img/signupform/gift.png';
@@ -11,11 +11,11 @@ const SignupForm = () => {
       <div className="max-w-4xl mx-auto text-left text-neutralDGrey">
         <div className='flex justify-between mb-4 md:mb-8'>
           <div className='flex flex-col'>
-            <h1 className="text-2xl lg:text-3xl font-semibold mb-4">
+            <h1 className="text-xl lg:text-3xl font-semibold mb-4">
               Управляйте продажами, лояльностью,<br />
               чатами и рассылками в едином окне
             </h1>
-            <p className="text-base lg:text-lg text-neutralDGrey">
+            <p className="text-sm lg:text-lg text-neutralDGrey">
               CRM – система для розничной торговли<br />
               и интернет-магазинов
             </p>
@@ -25,37 +25,37 @@ const SignupForm = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-8">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-3 md:gap-6 mb-4 md:mb-8">
           <div className="w-full">
-            <label className="block mb-2 text-sm ml-2 text-neutralDGrey" htmlFor="place-name">
+            <label className="block mb-2 text-xs md:text-sm ml-2 text-neutralDGrey" htmlFor="place-name">
               Введите название заведения
             </label>
             <input
               type="text"
               id="place-name"
               placeholder="Введите название заведения"
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full md:px-4 md:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
           </div>
 
           <div className="w-full">
-            <label className="block mb-2 text-sm ml-2 text-neutralDGrey" htmlFor="phone-number">
+            <label className="block mb-2 text-xs md:text-sm ml-2 text-neutralDGrey" htmlFor="phone-number">
               Введите номер телефона
             </label>
             <input
               type="text"
               id="phone-number"
               placeholder="+7 (000) 000 00 00"
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full md:px-4 md:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
           </div>
 
-          <button className="btn-primary w-full h-12 md:self-end">
+          <button className="btn-primary w-full h-10 md:h-12 md:self-end">
             Подключить бесплатно
           </button>
         </div>
 
-        <div className="grid gap-3 md:gap-8 text-neutralDGrey grid-cols-2 md:grid-cols-4">
+        <div className="grid gap-2 md:gap-8 text-neutralDGrey grid-cols-2 md:grid-cols-4">
           <div className="flex flex-col md:flex-row gap-1 md:gap-0 items-center space-x-2">
             <div className="w-10 h-10 flex items-center justify-center bg-white rounded-full border border-gray-300">
               <img src={coins} alt="Иконка пробного периода" className="w-5 h-5" />
@@ -102,9 +102,11 @@ const SignupForm = () => {
 };
 
 const SignupModal = ({ isOpen, onClose }) => {
+  const modalRef = useRef(null);
+
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (e.target === e.currentTarget) {
+      if (modalRef.current && !modalRef.current.contains(e.target)) {
         onClose();
       }
     };
@@ -126,9 +128,12 @@ const SignupModal = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-gray-900 bg-opacity-70 flex items-center justify-center z-50">
-      <div className="bg-blue-50 rounded-3xl shadow-lg p-8 relative mx-3">
+      <div
+        className="bg-blue-50 rounded-3xl shadow-lg p-5 md:p-12 relative mx-3"
+        ref={modalRef}
+      >
         <button
-          className="absolute top-2 right-4 text-2xl font-bold text-neutralDGrey lg:hover:text-brandPrimary transition-all"
+          className="absolute top-2 right-4 md:top-4 md:right-6 text-2xl font-bold text-neutralDGrey lg:hover:text-brandPrimary transition-all"
           onClick={onClose}
         >
           &times;
